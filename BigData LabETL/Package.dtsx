@@ -3871,6 +3871,1377 @@ where [refTable].[Nombre] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component refId="Package\DFT - Excel a Relacional\AG - Version mas reciente" componentClassID="Microsoft.Aggregate" contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3" description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day." name="AG - Version mas reciente" version="3">
+              <properties>
+                <property dataType="System.UInt32" description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used." name="KeyScale" typeConverter="KeyScaleType">0</property>
+                <property dataType="System.Null" description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence." name="Keys" />
+                <property dataType="System.UInt32" description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used." name="CountDistinctScale" typeConverter="KeyScaleType">0</property>
+                <property dataType="System.Null" description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence." name="CountDistinctKeys" />
+                <property dataType="System.Int32" description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100." name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Inputs[Aggregate Input 1]" name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Inputs[Aggregate Input 1].Columns[DocumentType]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentType" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DocumentType]">
+                      <properties>
+                        <property dataType="System.Int32" name="AggregationType">0</property>
+                        <property dataType="System.Int32" name="AggregationColumnId">603</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Inputs[Aggregate Input 1].Columns[DocumentNumber]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentNumber" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DocumentNumber]">
+                      <properties>
+                        <property dataType="System.Int32" name="AggregationType">0</property>
+                        <property dataType="System.Int32" name="AggregationColumnId">610</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Inputs[Aggregate Input 1].Columns[SurveyDate_Date]" cachedDataType="dbDate" cachedName="SurveyDate_Date" lineageId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[SurveyDate_Date]">
+                      <properties>
+                        <property dataType="System.Int32" name="AggregationType">0</property>
+                        <property dataType="System.Int32" name="AggregationColumnId">617</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Inputs[Aggregate Input 1].Columns[Rank_Key]" cachedDataType="i8" cachedName="Rank_Key" lineageId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output].Columns[Rank_Key]">
+                      <properties>
+                        <property dataType="System.Int32" name="AggregationType">7</property>
+                        <property dataType="System.Int32" name="AggregationColumnId">624</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1]" name="Aggregate Output 1">
+                  <properties>
+                    <property dataType="System.UInt32" description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used." name="KeyScale" typeConverter="KeyScaleType">0</property>
+                    <property dataType="System.Null" description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence." name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[DocumentType]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[DocumentType]" name="DocumentType">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the ID of the input column used in the aggregation." name="AggregationColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DocumentType]}</property>
+                        <property dataType="System.Int32" description="Specifies the type of aggregation." name="AggregationType" typeConverter="AggregationType">0</property>
+                        <property dataType="System.Int32" description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type." name="IsBig">1</property>
+                        <property dataType="System.Int32" description="Specifies the string comparison options." name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[DocumentNumber]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[DocumentNumber]" name="DocumentNumber">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the ID of the input column used in the aggregation." name="AggregationColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DocumentNumber]}</property>
+                        <property dataType="System.Int32" description="Specifies the type of aggregation." name="AggregationType" typeConverter="AggregationType">0</property>
+                        <property dataType="System.Int32" description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type." name="IsBig">1</property>
+                        <property dataType="System.Int32" description="Specifies the string comparison options." name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[SurveyDate_Date]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[SurveyDate_Date]" name="SurveyDate_Date">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the ID of the input column used in the aggregation." name="AggregationColumnId">#{Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[SurveyDate_Date]}</property>
+                        <property dataType="System.Int32" description="Specifies the type of aggregation." name="AggregationType" typeConverter="AggregationType">0</property>
+                        <property dataType="System.Int32" description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type." name="IsBig">1</property>
+                        <property dataType="System.Int32" description="Specifies the string comparison options." name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[Max_Rank]" dataType="i8" lineageId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[Max_Rank]" name="Max_Rank">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the ID of the input column used in the aggregation." name="AggregationColumnId">#{Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output].Columns[Rank_Key]}</property>
+                        <property dataType="System.Int32" description="Specifies the type of aggregation." name="AggregationType" typeConverter="AggregationType">7</property>
+                        <property dataType="System.Int32" description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type." name="IsBig">1</property>
+                        <property dataType="System.Int32" description="Specifies the string comparison options." name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component refId="Package\DFT - Excel a Relacional\CS - Ganador duplicado" componentClassID="Microsoft.ConditionalSplit" contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0" description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records." name="CS - Ganador duplicado" usesDispositions="true">
+              <inputs>
+                <input refId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Inputs[Conditional Split Input]" description="Input to the Conditional Split Transformation" name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Inputs[Conditional Split Input].Columns[Rank_Key]" cachedDataType="i8" cachedName="Rank_Key" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Rank_Key]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Inputs[Conditional Split Input].Columns[Max_Rank]" cachedDataType="i8" cachedName="Max_Rank" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Max_Rank]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output refId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Outputs[Ganador]" description="Default Output of the Conditional Split Transformation" exclusionGroup="1" name="Ganador" synchronousInputId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property dataType="System.Boolean" name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output refId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Outputs[Duplicado]" description="Output 1 of the Conditional Split Transformation" errorOrTruncationOperation="Computation" errorRowDisposition="FailComponent" exclusionGroup="1" name="Duplicado" synchronousInputId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Inputs[Conditional Split Input]" truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property containsID="true" dataType="System.String" description="Specifies the expression. This expression version uses lineage identifiers instead of column names." name="Expression">Rank_Key != Max_Rank</property>
+                    <property containsID="true" dataType="System.String" description="Specifies the friendly version of the expression. This expression version uses column names." expressionType="Notify" name="FriendlyExpression">Rank_Key != Max_Rank</property>
+                    <property dataType="System.Int32" description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value." name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output refId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Outputs[Conditional Split Error Output]" description="Error Output of the Conditional Split Transformation" exclusionGroup="1" isErrorOut="true" name="Conditional Split Error Output" synchronousInputId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Outputs[Conditional Split Error Output].Columns[ErrorCode]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Outputs[Conditional Split Error Output].Columns[ErrorCode]" name="ErrorCode" specialFlags="1" />
+                    <outputColumn refId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Outputs[Conditional Split Error Output].Columns[ErrorColumn]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Outputs[Conditional Split Error Output].Columns[ErrorColumn]" name="ErrorColumn" specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component refId="Package\DFT - Excel a Relacional\DC - Clave de version" componentClassID="Microsoft.DerivedColumn" contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0" description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column." name="DC - Clave de version" usesDispositions="true">
+              <inputs>
+                <input refId="Package\DFT - Excel a Relacional\DC - Clave de version.Inputs[Derived Column Input]" description="Input to the Derived Column Transformation" name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\DC - Clave de version.Inputs[Derived Column Input].Columns[UpdatedAt_Ts]" cachedDataType="dbTimeStamp" cachedName="UpdatedAt_Ts" lineageId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[UpdatedAt_Ts]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\DC - Clave de version.Inputs[Derived Column Input].Columns[SourceRowId_Int]" cachedDataType="i4" cachedName="SourceRowId_Int" lineageId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[SourceRowId_Int]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output refId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output]" description="Default Output of the Derived Column Transformation" exclusionGroup="1" name="Derived Column Output" synchronousInputId="Package\DFT - Excel a Relacional\DC - Clave de version.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output].Columns[Rank_Key]" dataType="i8" errorOrTruncationOperation="Computation" errorRowDisposition="FailComponent" lineageId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output].Columns[Rank_Key]" name="Rank_Key" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property containsID="true" dataType="System.String" description="Derived Column Expression" name="Expression">((DT_I8)DATEDIFF("ss",(DT_DBTIMESTAMP)"2000-01-01 00:00:00",#{Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[UpdatedAt_Ts]})) * 100000 + (DT_I8)#{Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[SourceRowId_Int]}</property>
+                        <property containsID="true" dataType="System.String" description="Derived Column Friendly Expression" expressionType="Notify" name="FriendlyExpression">((DT_I8)DATEDIFF("ss",(DT_DBTIMESTAMP)"2000-01-01 00:00:00",UpdatedAt_Ts)) * 100000 + (DT_I8)SourceRowId_Int</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output refId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Error Output]" description="Error Output of the Derived Column Transformation" exclusionGroup="1" isErrorOut="true" name="Derived Column Error Output" synchronousInputId="Package\DFT - Excel a Relacional\DC - Clave de version.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Error Output].Columns[ErrorCode]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Error Output].Columns[ErrorCode]" name="ErrorCode" specialFlags="1" />
+                    <outputColumn refId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Error Output].Columns[ErrorColumn]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Error Output].Columns[ErrorColumn]" name="ErrorColumn" specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component refId="Package\DFT - Excel a Relacional\MC - Duplicados" componentClassID="Microsoft.Multicast" contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0" description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners." name="MC - Duplicados">
+              <inputs>
+                <input refId="Package\DFT - Excel a Relacional\MC - Duplicados.Inputs[Multicast Input 1]" name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output refId="Package\DFT - Excel a Relacional\MC - Duplicados.Outputs[Multicast Output 1]" deleteOutputOnPathDetached="true" name="Multicast Output 1" synchronousInputId="Package\DFT - Excel a Relacional\MC - Duplicados.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output refId="Package\DFT - Excel a Relacional\MC - Duplicados.Outputs[Multicast Output 2]" deleteOutputOnPathDetached="true" name="Multicast Output 2" synchronousInputId="Package\DFT - Excel a Relacional\MC - Duplicados.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component refId="Package\DFT - Excel a Relacional\MJ - Ganador" componentClassID="Microsoft.MergeJoin" contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1" description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources." name="MJ - Ganador" version="1">
+              <properties>
+                <property dataType="System.Int32" description="Specifies the type of join to perform." name="JoinType" typeConverter="JoinType">1</property>
+                <property dataType="System.Int32" description="Specifies the number of columns in the ordering key." name="NumKeyColumns">3</property>
+                <property dataType="System.Boolean" description="Indicates whether the null values are treated as equal values." name="TreatNullsAsEqual">true</property>
+                <property dataType="System.Int32" description="Indicates the requested maximum buffers per input before blocking." name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input]" hasSideEffects="true" name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DocumentType]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentType" cachedSortKeyPosition="1" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DocumentType]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DocumentNumber]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentNumber" cachedSortKeyPosition="2" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DocumentNumber]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SurveyDate_Date]" cachedDataType="dbDate" cachedName="SurveyDate_Date" cachedSortKeyPosition="3" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SurveyDate_Date]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SourceRowId]" cachedDataType="wstr" cachedLength="255" cachedName="SourceRowId" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SourceRowId]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[FirstName]" cachedDataType="wstr" cachedLength="255" cachedName="FirstName" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[FirstName]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MiddleName]" cachedDataType="wstr" cachedLength="255" cachedName="MiddleName" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MiddleName]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[LastName]" cachedDataType="wstr" cachedLength="255" cachedName="LastName" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[LastName]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SecondLastName]" cachedDataType="wstr" cachedLength="255" cachedName="SecondLastName" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SecondLastName]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[BirthDate]" cachedDataType="wstr" cachedLength="255" cachedName="BirthDate" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[BirthDate]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[ReportedAge]" cachedDataType="wstr" cachedLength="255" cachedName="ReportedAge" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[ReportedAge]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Sex]" cachedDataType="wstr" cachedLength="255" cachedName="Sex" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Sex]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MaritalStatus]" cachedDataType="wstr" cachedLength="255" cachedName="MaritalStatus" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MaritalStatus]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Email]" cachedDataType="wstr" cachedLength="255" cachedName="Email" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Email]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Phone]" cachedDataType="wstr" cachedLength="255" cachedName="Phone" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Phone]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DepartmentCode]" cachedDataType="wstr" cachedLength="255" cachedName="DepartmentCode" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DepartmentCode]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DepartmentName]" cachedDataType="wstr" cachedLength="255" cachedName="DepartmentName" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DepartmentName]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MunicipalityCode]" cachedDataType="wstr" cachedLength="255" cachedName="MunicipalityCode" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MunicipalityCode]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MunicipalityName]" cachedDataType="wstr" cachedLength="255" cachedName="MunicipalityName" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MunicipalityName]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Zone]" cachedDataType="wstr" cachedLength="255" cachedName="Zone" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Zone]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Address]" cachedDataType="wstr" cachedLength="255" cachedName="Address" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Address]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HousingType]" cachedDataType="wstr" cachedLength="255" cachedName="HousingType" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HousingType]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SocioeconomicStratum]" cachedDataType="wstr" cachedLength="255" cachedName="SocioeconomicStratum" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SocioeconomicStratum]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EducationLevel]" cachedDataType="wstr" cachedLength="255" cachedName="EducationLevel" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EducationLevel]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmploymentStatus]" cachedDataType="wstr" cachedLength="255" cachedName="EmploymentStatus" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStatus]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[OccupationCode]" cachedDataType="wstr" cachedLength="255" cachedName="OccupationCode" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[OccupationCode]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[OccupationName]" cachedDataType="wstr" cachedLength="255" cachedName="OccupationName" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[OccupationName]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmployerName]" cachedDataType="wstr" cachedLength="255" cachedName="EmployerName" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmployerName]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[ContractType]" cachedDataType="wstr" cachedLength="255" cachedName="ContractType" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[ContractType]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmploymentStartDate]" cachedDataType="wstr" cachedLength="255" cachedName="EmploymentStartDate" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStartDate]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MonthlyIncome]" cachedDataType="wstr" cachedLength="255" cachedName="MonthlyIncome" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MonthlyIncome]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MonthlyExpenses]" cachedDataType="wstr" cachedLength="255" cachedName="MonthlyExpenses" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MonthlyExpenses]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Dependents]" cachedDataType="wstr" cachedLength="255" cachedName="Dependents" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Dependents]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HouseholdSize]" cachedDataType="wstr" cachedLength="255" cachedName="HouseholdSize" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HouseholdSize]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HealthRegime]" cachedDataType="wstr" cachedLength="255" cachedName="HealthRegime" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HealthRegime]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Disability]" cachedDataType="wstr" cachedLength="255" cachedName="Disability" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Disability]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SurveyDate]" cachedDataType="wstr" cachedLength="255" cachedName="SurveyDate" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SurveyDate]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[UpdatedAt]" cachedDataType="wstr" cachedLength="255" cachedName="UpdatedAt" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[UpdatedAt]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SourceChannel]" cachedDataType="wstr" cachedLength="255" cachedName="SourceChannel" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SourceChannel]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Sex_Clean]" cachedDataType="wstr" cachedLength="255" cachedName="Sex_Clean" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Sex_Clean]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Disability_Clean]" cachedDataType="wstr" cachedLength="2" cachedName="Disability_Clean" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Disability_Clean]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HealthRegime_Clean]" cachedDataType="wstr" cachedLength="255" cachedName="HealthRegime_Clean" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HealthRegime_Clean]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Zone_Clean]" cachedDataType="wstr" cachedLength="255" cachedName="Zone_Clean" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Zone_Clean]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Stratum_Clean]" cachedDataType="ui1" cachedName="Stratum_Clean" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Stratum_Clean]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SourceRowId_Int]" cachedDataType="i4" cachedName="SourceRowId_Int" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SourceRowId_Int]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[ReportedAge_Int]" cachedDataType="i4" cachedName="ReportedAge_Int" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[ReportedAge_Int]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[UpdatedAt_Ts]" cachedDataType="dbTimeStamp" cachedName="UpdatedAt_Ts" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[UpdatedAt_Ts]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[BirthDate_Parsed]" cachedDataType="dbDate" cachedName="BirthDate_Parsed" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[BirthDate_Parsed]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmploymentStart_Date]" cachedDataType="dbDate" cachedName="EmploymentStart_Date" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStart_Date]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Income_Num]" cachedDataType="numeric" cachedName="Income_Num" cachedPrecision="14" cachedScale="2" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Income_Num]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Expenses_Num]" cachedDataType="numeric" cachedName="Expenses_Num" cachedPrecision="14" cachedScale="2" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Expenses_Num]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Dependents_Int]" cachedDataType="ui1" cachedName="Dependents_Int" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Dependents_Int]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HouseholdSize_Int]" cachedDataType="ui1" cachedName="HouseholdSize_Int" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HouseholdSize_Int]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Phone_Clean]" cachedDataType="wstr" cachedLength="15" cachedName="Phone_Clean" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Phone_Clean]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Email_Clean]" cachedDataType="wstr" cachedLength="100" cachedName="Email_Clean" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Email_Clean]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[BirthDate_Final]" cachedDataType="dbDate" cachedName="BirthDate_Final" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[BirthDate_Final]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmploymentStart_Final]" cachedDataType="dbDate" cachedName="EmploymentStart_Final" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStart_Final]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Age_Calc]" cachedDataType="i4" cachedName="Age_Calc" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Age_Calc]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DepartmentCode_Ref]" cachedDataType="wstr" cachedLength="3" cachedName="DepartmentCode_Ref" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DepartmentCode_Ref]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[NivelEducativoId]" cachedDataType="ui1" cachedName="NivelEducativoId" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[NivelEducativoId]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EstadoLaboralId]" cachedDataType="ui1" cachedName="EstadoLaboralId" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EstadoLaboralId]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[TipoContratoId]" cachedDataType="ui1" cachedName="TipoContratoId" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[TipoContratoId]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[OccupationCode_Ref]" cachedDataType="wstr" cachedLength="3" cachedName="OccupationCode_Ref" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[OccupationCode_Ref]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Motivo_Rechazo]" cachedDataType="wstr" cachedLength="200" cachedName="Motivo_Rechazo" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Motivo_Rechazo]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Rank_Key]" cachedDataType="i8" cachedName="Rank_Key" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Rank_Key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Right Input]" hasSideEffects="true" name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Right Input].Columns[DocumentType]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentType" cachedSortKeyPosition="1" lineageId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[DocumentType]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Right Input].Columns[DocumentNumber]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentNumber" cachedSortKeyPosition="2" lineageId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[DocumentNumber]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Right Input].Columns[SurveyDate_Date]" cachedDataType="dbDate" cachedName="SurveyDate_Date" cachedSortKeyPosition="3" lineageId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[SurveyDate_Date]" />
+                    <inputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Right Input].Columns[Max_Rank]" cachedDataType="i8" cachedName="Max_Rank" lineageId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[Max_Rank]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output]" name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SourceRowId]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SourceRowId]" name="SourceRowId">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SourceRowId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DocumentType]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DocumentType]" name="DocumentType">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DocumentType]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DocumentNumber]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DocumentNumber]" name="DocumentNumber">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DocumentNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[FirstName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[FirstName]" name="FirstName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[FirstName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MiddleName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MiddleName]" name="MiddleName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MiddleName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[LastName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[LastName]" name="LastName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[LastName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SecondLastName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SecondLastName]" name="SecondLastName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SecondLastName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[BirthDate]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[BirthDate]" name="BirthDate">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[BirthDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[ReportedAge]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[ReportedAge]" name="ReportedAge">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[ReportedAge]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex]" name="Sex">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Sex]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MaritalStatus]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MaritalStatus]" name="MaritalStatus">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MaritalStatus]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Email]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Email]" name="Email">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Email]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Phone]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Phone]" name="Phone">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Phone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DepartmentCode]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DepartmentCode]" name="DepartmentCode">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DepartmentCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DepartmentName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DepartmentName]" name="DepartmentName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DepartmentName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MunicipalityCode]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MunicipalityCode]" name="MunicipalityCode">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MunicipalityCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MunicipalityName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MunicipalityName]" name="MunicipalityName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MunicipalityName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Zone]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Zone]" name="Zone">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Zone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Address]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Address]" name="Address">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Address]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HousingType]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HousingType]" name="HousingType">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HousingType]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SocioeconomicStratum]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SocioeconomicStratum]" name="SocioeconomicStratum">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SocioeconomicStratum]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EducationLevel]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EducationLevel]" name="EducationLevel">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EducationLevel]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmploymentStatus]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmploymentStatus]" name="EmploymentStatus">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmploymentStatus]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[OccupationCode]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[OccupationCode]" name="OccupationCode">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[OccupationCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[OccupationName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[OccupationName]" name="OccupationName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[OccupationName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmployerName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmployerName]" name="EmployerName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmployerName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[ContractType]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[ContractType]" name="ContractType">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[ContractType]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmploymentStartDate]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmploymentStartDate]" name="EmploymentStartDate">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmploymentStartDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MonthlyIncome]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MonthlyIncome]" name="MonthlyIncome">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MonthlyIncome]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MonthlyExpenses]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MonthlyExpenses]" name="MonthlyExpenses">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[MonthlyExpenses]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Dependents]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Dependents]" name="Dependents">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Dependents]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HouseholdSize]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HouseholdSize]" name="HouseholdSize">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HouseholdSize]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HealthRegime]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HealthRegime]" name="HealthRegime">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HealthRegime]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Disability]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Disability]" name="Disability">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Disability]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SurveyDate]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SurveyDate]" name="SurveyDate">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SurveyDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[UpdatedAt]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[UpdatedAt]" name="UpdatedAt">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[UpdatedAt]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SourceChannel]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SourceChannel]" name="SourceChannel">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SourceChannel]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex_Clean]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex_Clean]" name="Sex_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Sex_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Disability_Clean]" dataType="wstr" length="2" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Disability_Clean]" name="Disability_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Disability_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HealthRegime_Clean]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HealthRegime_Clean]" name="HealthRegime_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HealthRegime_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Zone_Clean]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Zone_Clean]" name="Zone_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Zone_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Stratum_Clean]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Stratum_Clean]" name="Stratum_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Stratum_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SourceRowId_Int]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SourceRowId_Int]" name="SourceRowId_Int">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SourceRowId_Int]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[ReportedAge_Int]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[ReportedAge_Int]" name="ReportedAge_Int">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[ReportedAge_Int]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SurveyDate_Date]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SurveyDate_Date]" name="SurveyDate_Date">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[SurveyDate_Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[UpdatedAt_Ts]" dataType="dbTimeStamp" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[UpdatedAt_Ts]" name="UpdatedAt_Ts">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[UpdatedAt_Ts]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[BirthDate_Parsed]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[BirthDate_Parsed]" name="BirthDate_Parsed">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[BirthDate_Parsed]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmploymentStart_Date]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmploymentStart_Date]" name="EmploymentStart_Date">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmploymentStart_Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Income_Num]" dataType="numeric" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Income_Num]" name="Income_Num" precision="14" scale="2">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Income_Num]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Expenses_Num]" dataType="numeric" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Expenses_Num]" name="Expenses_Num" precision="14" scale="2">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Expenses_Num]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Dependents_Int]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Dependents_Int]" name="Dependents_Int">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Dependents_Int]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HouseholdSize_Int]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[HouseholdSize_Int]" name="HouseholdSize_Int">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[HouseholdSize_Int]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Phone_Clean]" dataType="wstr" length="15" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Phone_Clean]" name="Phone_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Phone_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Email_Clean]" dataType="wstr" length="100" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Email_Clean]" name="Email_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Email_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[BirthDate_Final]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[BirthDate_Final]" name="BirthDate_Final">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[BirthDate_Final]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmploymentStart_Final]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EmploymentStart_Final]" name="EmploymentStart_Final">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EmploymentStart_Final]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Age_Calc]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Age_Calc]" name="Age_Calc">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Age_Calc]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DepartmentCode_Ref]" dataType="wstr" length="3" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[DepartmentCode_Ref]" name="DepartmentCode_Ref">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[DepartmentCode_Ref]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[NivelEducativoId]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[NivelEducativoId]" name="NivelEducativoId">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[NivelEducativoId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EstadoLaboralId]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[EstadoLaboralId]" name="EstadoLaboralId">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[EstadoLaboralId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[TipoContratoId]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[TipoContratoId]" name="TipoContratoId">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[TipoContratoId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[OccupationCode_Ref]" dataType="wstr" length="3" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[OccupationCode_Ref]" name="OccupationCode_Ref">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[OccupationCode_Ref]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Motivo_Rechazo]" dataType="wstr" length="200" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Motivo_Rechazo]" name="Motivo_Rechazo">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Motivo_Rechazo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Rank_Key]" dataType="i8" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Rank_Key]" name="Rank_Key">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input].Columns[Rank_Key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Max_Rank]" dataType="i8" lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Max_Rank]" name="Max_Rank">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="The input column associated with this output column" name="InputColumnID">#{Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Right Input].Columns[Max_Rank]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component refId="Package\DFT - Excel a Relacional\SO - Agregado" componentClassID="Microsoft.Sort" contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1" description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows." name="SO - Agregado" version="1">
+              <properties>
+                <property dataType="System.Boolean" description="Indicates whether the Sort transformation removes rows with duplicate sort values." name="EliminateDuplicates">false</property>
+                <property dataType="System.Int32" description="Specifies the maximum number of threads to use for sorting." expressionType="Notify" name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input refId="Package\DFT - Excel a Relacional\SO - Agregado.Inputs[Sort Input]" name="Sort Input">
+                  <inputColumns>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Agregado.Inputs[Sort Input].Columns[DocumentType]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentType" lineageId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[DocumentType]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Agregado.Inputs[Sort Input].Columns[DocumentNumber]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentNumber" lineageId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[DocumentNumber]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Agregado.Inputs[Sort Input].Columns[SurveyDate_Date]" cachedDataType="dbDate" cachedName="SurveyDate_Date" lineageId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[SurveyDate_Date]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Agregado.Inputs[Sort Input].Columns[Max_Rank]" cachedDataType="i8" cachedName="Max_Rank" lineageId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[Max_Rank]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output refId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output]" isSorted="true" name="Sort Output">
+                  <outputColumns>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[DocumentType]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[DocumentType]" name="DocumentType" sortKeyPosition="1">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[DocumentType]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[DocumentNumber]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[DocumentNumber]" name="DocumentNumber" sortKeyPosition="2">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[DocumentNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[SurveyDate_Date]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[SurveyDate_Date]" name="SurveyDate_Date" sortKeyPosition="3">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[SurveyDate_Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[Max_Rank]" dataType="i8" lineageId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output].Columns[Max_Rank]" name="Max_Rank">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1].Columns[Max_Rank]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component refId="Package\DFT - Excel a Relacional\SO - Completo" componentClassID="Microsoft.Sort" contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1" description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows." name="SO - Completo" version="1">
+              <properties>
+                <property dataType="System.Boolean" description="Indicates whether the Sort transformation removes rows with duplicate sort values." name="EliminateDuplicates">false</property>
+                <property dataType="System.Int32" description="Specifies the maximum number of threads to use for sorting." expressionType="Notify" name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input]" name="Sort Input">
+                  <inputColumns>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[SourceRowId]" cachedDataType="wstr" cachedLength="255" cachedName="SourceRowId" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SourceRowId]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[DocumentType]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentType" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DocumentType]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[DocumentNumber]" cachedDataType="wstr" cachedLength="255" cachedName="DocumentNumber" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DocumentNumber]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[FirstName]" cachedDataType="wstr" cachedLength="255" cachedName="FirstName" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[FirstName]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[MiddleName]" cachedDataType="wstr" cachedLength="255" cachedName="MiddleName" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MiddleName]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[LastName]" cachedDataType="wstr" cachedLength="255" cachedName="LastName" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[LastName]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[SecondLastName]" cachedDataType="wstr" cachedLength="255" cachedName="SecondLastName" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SecondLastName]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[BirthDate]" cachedDataType="wstr" cachedLength="255" cachedName="BirthDate" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[BirthDate]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[ReportedAge]" cachedDataType="wstr" cachedLength="255" cachedName="ReportedAge" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[ReportedAge]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Sex]" cachedDataType="wstr" cachedLength="255" cachedName="Sex" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Sex]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[MaritalStatus]" cachedDataType="wstr" cachedLength="255" cachedName="MaritalStatus" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MaritalStatus]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Email]" cachedDataType="wstr" cachedLength="255" cachedName="Email" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Email]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Phone]" cachedDataType="wstr" cachedLength="255" cachedName="Phone" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Phone]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[DepartmentCode]" cachedDataType="wstr" cachedLength="255" cachedName="DepartmentCode" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DepartmentCode]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[DepartmentName]" cachedDataType="wstr" cachedLength="255" cachedName="DepartmentName" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DepartmentName]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[MunicipalityCode]" cachedDataType="wstr" cachedLength="255" cachedName="MunicipalityCode" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MunicipalityCode]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[MunicipalityName]" cachedDataType="wstr" cachedLength="255" cachedName="MunicipalityName" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MunicipalityName]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Zone]" cachedDataType="wstr" cachedLength="255" cachedName="Zone" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Zone]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Address]" cachedDataType="wstr" cachedLength="255" cachedName="Address" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Address]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[HousingType]" cachedDataType="wstr" cachedLength="255" cachedName="HousingType" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[HousingType]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[SocioeconomicStratum]" cachedDataType="wstr" cachedLength="255" cachedName="SocioeconomicStratum" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SocioeconomicStratum]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[EducationLevel]" cachedDataType="wstr" cachedLength="255" cachedName="EducationLevel" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[EducationLevel]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[EmploymentStatus]" cachedDataType="wstr" cachedLength="255" cachedName="EmploymentStatus" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[EmploymentStatus]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[OccupationCode]" cachedDataType="wstr" cachedLength="255" cachedName="OccupationCode" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[OccupationCode]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[OccupationName]" cachedDataType="wstr" cachedLength="255" cachedName="OccupationName" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[OccupationName]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[EmployerName]" cachedDataType="wstr" cachedLength="255" cachedName="EmployerName" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[EmployerName]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[ContractType]" cachedDataType="wstr" cachedLength="255" cachedName="ContractType" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[ContractType]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[EmploymentStartDate]" cachedDataType="wstr" cachedLength="255" cachedName="EmploymentStartDate" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[EmploymentStartDate]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[MonthlyIncome]" cachedDataType="wstr" cachedLength="255" cachedName="MonthlyIncome" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MonthlyIncome]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[MonthlyExpenses]" cachedDataType="wstr" cachedLength="255" cachedName="MonthlyExpenses" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MonthlyExpenses]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Dependents]" cachedDataType="wstr" cachedLength="255" cachedName="Dependents" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Dependents]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[HouseholdSize]" cachedDataType="wstr" cachedLength="255" cachedName="HouseholdSize" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[HouseholdSize]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[HealthRegime]" cachedDataType="wstr" cachedLength="255" cachedName="HealthRegime" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[HealthRegime]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Disability]" cachedDataType="wstr" cachedLength="255" cachedName="Disability" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Disability]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[SurveyDate]" cachedDataType="wstr" cachedLength="255" cachedName="SurveyDate" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SurveyDate]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[UpdatedAt]" cachedDataType="wstr" cachedLength="255" cachedName="UpdatedAt" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[UpdatedAt]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[SourceChannel]" cachedDataType="wstr" cachedLength="255" cachedName="SourceChannel" lineageId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SourceChannel]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Sex_Clean]" cachedDataType="wstr" cachedLength="255" cachedName="Sex_Clean" lineageId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[Sex_Clean]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Disability_Clean]" cachedDataType="wstr" cachedLength="2" cachedName="Disability_Clean" lineageId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[Disability_Clean]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[HealthRegime_Clean]" cachedDataType="wstr" cachedLength="255" cachedName="HealthRegime_Clean" lineageId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[HealthRegime_Clean]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Zone_Clean]" cachedDataType="wstr" cachedLength="255" cachedName="Zone_Clean" lineageId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[Zone_Clean]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Stratum_Clean]" cachedDataType="ui1" cachedName="Stratum_Clean" lineageId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[Stratum_Clean]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[SourceRowId_Int]" cachedDataType="i4" cachedName="SourceRowId_Int" lineageId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[SourceRowId_Int]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[ReportedAge_Int]" cachedDataType="i4" cachedName="ReportedAge_Int" lineageId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[ReportedAge_Int]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[SurveyDate_Date]" cachedDataType="dbDate" cachedName="SurveyDate_Date" lineageId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[SurveyDate_Date]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[UpdatedAt_Ts]" cachedDataType="dbTimeStamp" cachedName="UpdatedAt_Ts" lineageId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[UpdatedAt_Ts]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[BirthDate_Parsed]" cachedDataType="dbDate" cachedName="BirthDate_Parsed" lineageId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[BirthDate_Parsed]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[EmploymentStart_Date]" cachedDataType="dbDate" cachedName="EmploymentStart_Date" lineageId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[EmploymentStart_Date]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Income_Num]" cachedDataType="numeric" cachedName="Income_Num" cachedPrecision="14" cachedScale="2" lineageId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Income_Num]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Expenses_Num]" cachedDataType="numeric" cachedName="Expenses_Num" cachedPrecision="14" cachedScale="2" lineageId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Expenses_Num]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Dependents_Int]" cachedDataType="ui1" cachedName="Dependents_Int" lineageId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Dependents_Int]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[HouseholdSize_Int]" cachedDataType="ui1" cachedName="HouseholdSize_Int" lineageId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[HouseholdSize_Int]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Phone_Clean]" cachedDataType="wstr" cachedLength="15" cachedName="Phone_Clean" lineageId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Phone_Clean]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Email_Clean]" cachedDataType="wstr" cachedLength="100" cachedName="Email_Clean" lineageId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Email_Clean]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[BirthDate_Final]" cachedDataType="dbDate" cachedName="BirthDate_Final" lineageId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output].Columns[BirthDate_Final]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[EmploymentStart_Final]" cachedDataType="dbDate" cachedName="EmploymentStart_Final" lineageId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output].Columns[EmploymentStart_Final]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Age_Calc]" cachedDataType="i4" cachedName="Age_Calc" lineageId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output].Columns[Age_Calc]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[DepartmentCode_Ref]" cachedDataType="wstr" cachedLength="3" cachedName="DepartmentCode_Ref" lineageId="Package\DFT - Excel a Relacional\LK - Municipio.Outputs[Lookup Match Output].Columns[DepartmentCode_Ref]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[NivelEducativoId]" cachedDataType="ui1" cachedName="NivelEducativoId" lineageId="Package\DFT - Excel a Relacional\LK - Nivel educativo.Outputs[Lookup Match Output].Columns[NivelEducativoId]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[EstadoLaboralId]" cachedDataType="ui1" cachedName="EstadoLaboralId" lineageId="Package\DFT - Excel a Relacional\LK - Estado laboral.Outputs[Lookup Match Output].Columns[EstadoLaboralId]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[TipoContratoId]" cachedDataType="ui1" cachedName="TipoContratoId" lineageId="Package\DFT - Excel a Relacional\LK - Tipo contrato.Outputs[Lookup Match Output].Columns[TipoContratoId]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[OccupationCode_Ref]" cachedDataType="wstr" cachedLength="3" cachedName="OccupationCode_Ref" lineageId="Package\DFT - Excel a Relacional\LK - Ocupacion.Outputs[Lookup Match Output].Columns[OccupationCode_Ref]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Motivo_Rechazo]" cachedDataType="wstr" cachedLength="200" cachedName="Motivo_Rechazo" lineageId="Package\DFT - Excel a Relacional\DC - Motivo de rechazo.Outputs[Derived Column Output].Columns[Motivo_Rechazo]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input].Columns[Rank_Key]" cachedDataType="i8" cachedName="Rank_Key" lineageId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output].Columns[Rank_Key]">
+                      <properties>
+                        <property dataType="System.Int32" description="Specifies the comparison options for character data." name="NewComparisonFlags">0</property>
+                        <property dataType="System.Int32" description="Specifies the sort order of the column." name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output]" isSorted="true" name="Sort Output">
+                  <outputColumns>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SourceRowId]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SourceRowId]" name="SourceRowId">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SourceRowId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DocumentType]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DocumentType]" name="DocumentType" sortKeyPosition="1">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DocumentType]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DocumentNumber]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DocumentNumber]" name="DocumentNumber" sortKeyPosition="2">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DocumentNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[FirstName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[FirstName]" name="FirstName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[FirstName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MiddleName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MiddleName]" name="MiddleName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MiddleName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[LastName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[LastName]" name="LastName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[LastName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SecondLastName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SecondLastName]" name="SecondLastName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SecondLastName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[BirthDate]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[BirthDate]" name="BirthDate">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[BirthDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[ReportedAge]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[ReportedAge]" name="ReportedAge">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[ReportedAge]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Sex]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Sex]" name="Sex">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Sex]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MaritalStatus]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MaritalStatus]" name="MaritalStatus">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MaritalStatus]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Email]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Email]" name="Email">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Email]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Phone]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Phone]" name="Phone">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Phone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DepartmentCode]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DepartmentCode]" name="DepartmentCode">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DepartmentCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DepartmentName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DepartmentName]" name="DepartmentName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[DepartmentName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MunicipalityCode]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MunicipalityCode]" name="MunicipalityCode">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MunicipalityCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MunicipalityName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MunicipalityName]" name="MunicipalityName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MunicipalityName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Zone]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Zone]" name="Zone">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Zone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Address]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Address]" name="Address">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Address]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HousingType]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HousingType]" name="HousingType">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[HousingType]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SocioeconomicStratum]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SocioeconomicStratum]" name="SocioeconomicStratum">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SocioeconomicStratum]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EducationLevel]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EducationLevel]" name="EducationLevel">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[EducationLevel]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStatus]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStatus]" name="EmploymentStatus">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[EmploymentStatus]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[OccupationCode]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[OccupationCode]" name="OccupationCode">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[OccupationCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[OccupationName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[OccupationName]" name="OccupationName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[OccupationName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmployerName]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmployerName]" name="EmployerName">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[EmployerName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[ContractType]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[ContractType]" name="ContractType">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[ContractType]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStartDate]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStartDate]" name="EmploymentStartDate">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[EmploymentStartDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MonthlyIncome]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MonthlyIncome]" name="MonthlyIncome">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MonthlyIncome]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MonthlyExpenses]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[MonthlyExpenses]" name="MonthlyExpenses">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[MonthlyExpenses]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Dependents]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Dependents]" name="Dependents">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Dependents]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HouseholdSize]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HouseholdSize]" name="HouseholdSize">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[HouseholdSize]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HealthRegime]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HealthRegime]" name="HealthRegime">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[HealthRegime]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Disability]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Disability]" name="Disability">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[Disability]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SurveyDate]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SurveyDate]" name="SurveyDate">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SurveyDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[UpdatedAt]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[UpdatedAt]" name="UpdatedAt">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[UpdatedAt]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SourceChannel]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SourceChannel]" name="SourceChannel">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output].Columns[SourceChannel]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Sex_Clean]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Sex_Clean]" name="Sex_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[Sex_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Disability_Clean]" dataType="wstr" length="2" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Disability_Clean]" name="Disability_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[Disability_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HealthRegime_Clean]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HealthRegime_Clean]" name="HealthRegime_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[HealthRegime_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Zone_Clean]" dataType="wstr" length="255" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Zone_Clean]" name="Zone_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[Zone_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Stratum_Clean]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Stratum_Clean]" name="Stratum_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output].Columns[Stratum_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SourceRowId_Int]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SourceRowId_Int]" name="SourceRowId_Int">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[SourceRowId_Int]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[ReportedAge_Int]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[ReportedAge_Int]" name="ReportedAge_Int">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[ReportedAge_Int]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SurveyDate_Date]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[SurveyDate_Date]" name="SurveyDate_Date" sortKeyPosition="3">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[SurveyDate_Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[UpdatedAt_Ts]" dataType="dbTimeStamp" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[UpdatedAt_Ts]" name="UpdatedAt_Ts">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output].Columns[UpdatedAt_Ts]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[BirthDate_Parsed]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[BirthDate_Parsed]" name="BirthDate_Parsed">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[BirthDate_Parsed]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStart_Date]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStart_Date]" name="EmploymentStart_Date">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[EmploymentStart_Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Income_Num]" dataType="numeric" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Income_Num]" name="Income_Num" precision="14" scale="2">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Income_Num]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Expenses_Num]" dataType="numeric" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Expenses_Num]" name="Expenses_Num" precision="14" scale="2">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Expenses_Num]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Dependents_Int]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Dependents_Int]" name="Dependents_Int">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Dependents_Int]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HouseholdSize_Int]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[HouseholdSize_Int]" name="HouseholdSize_Int">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[HouseholdSize_Int]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Phone_Clean]" dataType="wstr" length="15" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Phone_Clean]" name="Phone_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Phone_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Email_Clean]" dataType="wstr" length="100" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Email_Clean]" name="Email_Clean">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output].Columns[Email_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[BirthDate_Final]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[BirthDate_Final]" name="BirthDate_Final">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output].Columns[BirthDate_Final]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStart_Final]" dataType="dbDate" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EmploymentStart_Final]" name="EmploymentStart_Final">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output].Columns[EmploymentStart_Final]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Age_Calc]" dataType="i4" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Age_Calc]" name="Age_Calc">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output].Columns[Age_Calc]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DepartmentCode_Ref]" dataType="wstr" length="3" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[DepartmentCode_Ref]" name="DepartmentCode_Ref">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\LK - Municipio.Outputs[Lookup Match Output].Columns[DepartmentCode_Ref]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[NivelEducativoId]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[NivelEducativoId]" name="NivelEducativoId">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\LK - Nivel educativo.Outputs[Lookup Match Output].Columns[NivelEducativoId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EstadoLaboralId]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[EstadoLaboralId]" name="EstadoLaboralId">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\LK - Estado laboral.Outputs[Lookup Match Output].Columns[EstadoLaboralId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[TipoContratoId]" dataType="ui1" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[TipoContratoId]" name="TipoContratoId">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\LK - Tipo contrato.Outputs[Lookup Match Output].Columns[TipoContratoId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[OccupationCode_Ref]" dataType="wstr" length="3" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[OccupationCode_Ref]" name="OccupationCode_Ref">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\LK - Ocupacion.Outputs[Lookup Match Output].Columns[OccupationCode_Ref]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Motivo_Rechazo]" dataType="wstr" length="200" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Motivo_Rechazo]" name="Motivo_Rechazo">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Motivo de rechazo.Outputs[Derived Column Output].Columns[Motivo_Rechazo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn refId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Rank_Key]" dataType="i8" lineageId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output].Columns[Rank_Key]" name="Rank_Key">
+                      <properties>
+                        <property containsID="true" dataType="System.Int32" description="Specifies the lineage identifier of the input column that is associated with this output column." name="SortColumnId">#{Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output].Columns[Rank_Key]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -3963,6 +5334,14 @@ where [refTable].[Nombre] = ?</property>
               endId="Package\DFT - Excel a Relacional\Destino - RECHAZOS obligatorios.Inputs[OLE DB Destination Input]"
               name="Row Count Output 1"
               startId="Package\DFT - Excel a Relacional\RC - Rechazos obligatorios.Outputs[Row Count Output 1]" />
+            <path refId="Package\DFT - Excel a Relacional.Paths[Aggregate Output 1]" endId="Package\DFT - Excel a Relacional\SO - Agregado.Inputs[Sort Input]" name="Aggregate Output 1" startId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1]" />
+            <path refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output7]" endId="Package\DFT - Excel a Relacional\MC - Duplicados.Inputs[Multicast Input 1]" name="Derived Column Output" startId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output]" />
+            <path refId="Package\DFT - Excel a Relacional.Paths[Merge Join Output]" endId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Inputs[Conditional Split Input]" name="Merge Join Output" startId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output]" />
+            <path refId="Package\DFT - Excel a Relacional.Paths[Multicast Output 1]" endId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Inputs[Aggregate Input 1]" name="Multicast Output 1" startId="Package\DFT - Excel a Relacional\MC - Duplicados.Outputs[Multicast Output 1]" />
+            <path refId="Package\DFT - Excel a Relacional.Paths[Multicast Output 2]" endId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input]" name="Multicast Output 2" startId="Package\DFT - Excel a Relacional\MC - Duplicados.Outputs[Multicast Output 2]" />
+            <path refId="Package\DFT - Excel a Relacional.Paths[Sort Output]" endId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input]" name="Sort Output" startId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output]" />
+            <path refId="Package\DFT - Excel a Relacional.Paths[Sort Output1]" endId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Right Input]" name="Sort Output" startId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output]" />
+            <path refId="Package\DFT - Excel a Relacional.Paths[Valido]" endId="Package\DFT - Excel a Relacional\DC - Clave de version.Inputs[Derived Column Input]" name="Valido" startId="Package\DFT - Excel a Relacional\CS - Datos obligatorios.Outputs[Valido]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
