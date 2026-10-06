@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="JakeASUS.ETL_Personas_REL"
+  DTS:DTSID="{671AAD0A-783A-421F-BB81-2B9F2A939388}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=JakeASUS;Initial Catalog=ETL_Personas_REL;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-BigData LabETL-{671AAD0A-783A-421F-BB81-2B9F2A939388}JakeASUS.ETL_Personas_REL;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
