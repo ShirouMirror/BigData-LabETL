@@ -1,0 +1,20 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# SSIS and build output
+**/bin/
+**/obj/
+*.ispac
+*.dtproj.user
+*.log
+*.tmp
+*.bak
+
+# Runtime/tool caches
+.cache/
+**/.cache/
+node_modules/
