@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{E6274742-15B0-4646-B937-341190D0EBB1}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{D137E848-93CA-4E5C-AD42-B66E1FFDB92C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -54,6 +54,1530 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - Cargar OBSERVACION"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5DF52403-B0F7-4024-8BFC-C33875EE9851}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - Cargar OBSERVACION"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destino - OBSERVACION"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[OBSERVACION]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Connections[OleDbConnection]"
+                  connectionManagerID="{671AAD0A-783A-421F-BB81-2B9F2A939388}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[JakeASUS.ETL_Personas_REL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[MunicipalityCode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MunicipalityCode"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[MunicipalityCode]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MunicipalityCode]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Address"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Address]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[HousingType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="HousingType"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[HousingType]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HousingType]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[EmployerName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EmployerName"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[EmployerName]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmployerName]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[SourceChannel]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SourceChannel"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[SourceChannel]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SourceChannel]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[NivelEducativoId]"
+                      cachedDataType="ui1"
+                      cachedName="NivelEducativoId"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[NivelEducativoId]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[NivelEducativoId]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[EstadoLaboralId]"
+                      cachedDataType="ui1"
+                      cachedName="EstadoLaboralId"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[EstadoLaboralId]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EstadoLaboralId]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[TipoContratoId]"
+                      cachedDataType="ui1"
+                      cachedName="TipoContratoId"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[TipoContratoId]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[TipoContratoId]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[PersonaId]"
+                      cachedDataType="i4"
+                      cachedName="PersonaId"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[PersonaId]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Match Output].Columns[PersonaId]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[SurveyDate_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="SurveyDate_Date"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[SurveyDate]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SurveyDate_Date]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[Zone_Clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Zone_Clean"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[Zone]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Zone_Clean]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[Stratum_Clean]"
+                      cachedDataType="ui1"
+                      cachedName="Stratum_Clean"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[SocioeconomicStratum]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Stratum_Clean]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[OccupationCode_Ref]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="OccupationCode_Ref"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[OccupationCode]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[OccupationCode_Ref]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[EmploymentStart_Final]"
+                      cachedDataType="dbDate"
+                      cachedName="EmploymentStart_Final"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[EmploymentStartDate]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmploymentStart_Final]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[Income_Num]"
+                      cachedDataType="numeric"
+                      cachedName="Income_Num"
+                      cachedPrecision="14"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[MonthlyIncome]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Income_Num]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[Expenses_Num]"
+                      cachedDataType="numeric"
+                      cachedName="Expenses_Num"
+                      cachedPrecision="14"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[MonthlyExpenses]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Expenses_Num]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[Dependents_Int]"
+                      cachedDataType="ui1"
+                      cachedName="Dependents_Int"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[Dependents]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Dependents_Int]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[HealthRegime_Clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="HealthRegime_Clean"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[HealthRegime]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HealthRegime_Clean]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[HouseholdSize_Int]"
+                      cachedDataType="ui1"
+                      cachedName="HouseholdSize_Int"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[HouseholdSize]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HouseholdSize_Int]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[UpdatedAt_Ts]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedAt_Ts"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedAt]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[UpdatedAt_Ts]" />
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].Columns[SourceRowId_Int]"
+                      cachedDataType="i4"
+                      cachedName="SourceRowId_Int"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[SourceRowId]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SourceRowId_Int]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[ObservacionId]"
+                      dataType="i4"
+                      name="ObservacionId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[PersonaId]"
+                      dataType="i4"
+                      name="PersonaId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[SurveyDate]"
+                      dataType="dbDate"
+                      name="SurveyDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[MunicipalityCode]"
+                      dataType="wstr"
+                      length="4"
+                      name="MunicipalityCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[Zone]"
+                      dataType="wstr"
+                      length="10"
+                      name="Zone" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="150"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[HousingType]"
+                      dataType="wstr"
+                      length="15"
+                      name="HousingType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[SocioeconomicStratum]"
+                      dataType="ui1"
+                      name="SocioeconomicStratum" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[NivelEducativoId]"
+                      dataType="ui1"
+                      name="NivelEducativoId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[EstadoLaboralId]"
+                      dataType="ui1"
+                      name="EstadoLaboralId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[OccupationCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="OccupationCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[EmployerName]"
+                      dataType="wstr"
+                      length="100"
+                      name="EmployerName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[TipoContratoId]"
+                      dataType="ui1"
+                      name="TipoContratoId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[EmploymentStartDate]"
+                      dataType="dbDate"
+                      name="EmploymentStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[MonthlyIncome]"
+                      dataType="numeric"
+                      name="MonthlyIncome"
+                      precision="14"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[MonthlyExpenses]"
+                      dataType="numeric"
+                      name="MonthlyExpenses"
+                      precision="14"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[BalanceMensual]"
+                      dataType="numeric"
+                      name="BalanceMensual"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[Dependents]"
+                      dataType="ui1"
+                      name="Dependents" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[HouseholdSize]"
+                      dataType="ui1"
+                      name="HouseholdSize" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[HealthRegime]"
+                      dataType="wstr"
+                      length="20"
+                      name="HealthRegime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[SourceChannel]"
+                      dataType="wstr"
+                      length="15"
+                      name="SourceChannel" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedAt]"
+                      dataType="dbTimeStamp2"
+                      name="UpdatedAt" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input].ExternalColumns[SourceRowId]"
+                      dataType="i4"
+                      name="SourceRowId" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LK - Observacion existente"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT PersonaId, SurveyDate, ObservacionId FROM dbo.OBSERVACION</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT PersonaId, SurveyDate, ObservacionId FROM dbo.OBSERVACION) [refTable]
+where [refTable].[SurveyDate] = ? and [refTable].[PersonaId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PersonaId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SurveyDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ObservacionId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SurveyDate_Date]};#{Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Match Output].Columns[PersonaId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Connections[OleDbConnection]"
+                  connectionManagerID="{671AAD0A-783A-421F-BB81-2B9F2A939388}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[JakeASUS.ETL_Personas_REL]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Inputs[Lookup Input].Columns[PersonaId]"
+                      cachedDataType="i4"
+                      cachedName="PersonaId"
+                      lineageId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Match Output].Columns[PersonaId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PersonaId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Inputs[Lookup Input].Columns[SurveyDate_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="SurveyDate_Date"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SurveyDate_Date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SurveyDate</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup Match Output].Columns[ObservacionId_Existente]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup Match Output].Columns[ObservacionId_Existente]"
+                      name="ObservacionId_Existente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">ObservacionId</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Cargar OBSERVACION\LK - Persona"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LK - Persona"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DocumentType, DocumentNumber, PersonaId FROM dbo.PERSONA</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT DocumentType, DocumentNumber, PersonaId FROM dbo.PERSONA) [refTable]
+where [refTable].[DocumentType] = ? and [refTable].[DocumentNumber] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DocumentType" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DocumentNumber" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PersonaId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentType]};#{Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentNumber]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Connections[OleDbConnection]"
+                  connectionManagerID="{671AAD0A-783A-421F-BB81-2B9F2A939388}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[JakeASUS.ETL_Personas_REL]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Inputs[Lookup Input].Columns[DocumentType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DocumentType"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentType]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DocumentType</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Inputs[Lookup Input].Columns[DocumentNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DocumentNumber"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DocumentNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT - Cargar OBSERVACION\LK - Persona.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Match Output].Columns[PersonaId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Match Output].Columns[PersonaId]"
+                      name="PersonaId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">PersonaId</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT - Cargar OBSERVACION\LK - Persona.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT - Cargar OBSERVACION\LK - Persona.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores"
+              componentClassID="Microsoft.RawSource"
+              contactInfo="Reads raw data from a flat file that was previously written by the Raw File destination. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers.;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Reads raw data from a flat file that was previously written by the Raw File destination. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers."
+              name="RAW - Leer ganadores"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the file."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Output file name"
+                  name="FileName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.NonValidatingFileNameEditor">C:\Temp\ganadores.raw</property>
+                <property
+                  dataType="System.Null"
+                  description="Name of the variable that contains the file name"
+                  name="FileNameVariable" />
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output]"
+                  isSorted="true"
+                  name="Raw File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SourceRowId]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SourceRowId]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SourceRowId]"
+                      name="SourceRowId" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentType]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DocumentType]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentType]"
+                      name="DocumentType"
+                      sortKeyPosition="1" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentNumber]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DocumentNumber]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentNumber]"
+                      name="DocumentNumber"
+                      sortKeyPosition="2" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[FirstName]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MiddleName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MiddleName]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MiddleName]"
+                      name="MiddleName" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[LastName]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SecondLastName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SecondLastName]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SecondLastName]"
+                      name="SecondLastName" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[BirthDate]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[BirthDate]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[BirthDate]"
+                      name="BirthDate" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[ReportedAge]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[ReportedAge]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[ReportedAge]"
+                      name="ReportedAge" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Sex]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Sex]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Sex]"
+                      name="Sex" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MaritalStatus]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MaritalStatus]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MaritalStatus]"
+                      name="MaritalStatus" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Email]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Email]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Email]"
+                      name="Email" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Phone]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Phone]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DepartmentCode]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DepartmentCode]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DepartmentCode]"
+                      name="DepartmentCode" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DepartmentName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DepartmentName]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DepartmentName]"
+                      name="DepartmentName" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MunicipalityCode]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MunicipalityCode]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MunicipalityCode]"
+                      name="MunicipalityCode" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MunicipalityName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MunicipalityName]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MunicipalityName]"
+                      name="MunicipalityName" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Zone]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Zone]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Zone]"
+                      name="Zone" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Address]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Address]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Address]"
+                      name="Address" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HousingType]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HousingType]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HousingType]"
+                      name="HousingType" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SocioeconomicStratum]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SocioeconomicStratum]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SocioeconomicStratum]"
+                      name="SocioeconomicStratum" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EducationLevel]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EducationLevel]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EducationLevel]"
+                      name="EducationLevel" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmploymentStatus]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmploymentStatus]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmploymentStatus]"
+                      name="EmploymentStatus" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[OccupationCode]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[OccupationCode]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[OccupationCode]"
+                      name="OccupationCode" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[OccupationName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[OccupationName]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[OccupationName]"
+                      name="OccupationName" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmployerName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmployerName]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmployerName]"
+                      name="EmployerName" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[ContractType]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[ContractType]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[ContractType]"
+                      name="ContractType" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmploymentStartDate]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmploymentStartDate]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmploymentStartDate]"
+                      name="EmploymentStartDate" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MonthlyIncome]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MonthlyIncome]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MonthlyIncome]"
+                      name="MonthlyIncome" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MonthlyExpenses]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MonthlyExpenses]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[MonthlyExpenses]"
+                      name="MonthlyExpenses" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Dependents]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Dependents]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Dependents]"
+                      name="Dependents" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HouseholdSize]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HouseholdSize]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HouseholdSize]"
+                      name="HouseholdSize" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HealthRegime]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HealthRegime]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HealthRegime]"
+                      name="HealthRegime" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Disability]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Disability]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Disability]"
+                      name="Disability" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SurveyDate]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SurveyDate]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SurveyDate]"
+                      name="SurveyDate" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[UpdatedAt]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[UpdatedAt]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[UpdatedAt]"
+                      name="UpdatedAt" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SourceChannel]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SourceChannel]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SourceChannel]"
+                      name="SourceChannel" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Sex_Clean]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Sex_Clean]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Sex_Clean]"
+                      name="Sex_Clean" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Disability_Clean]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Disability_Clean]"
+                      length="2"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Disability_Clean]"
+                      name="Disability_Clean" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HealthRegime_Clean]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HealthRegime_Clean]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HealthRegime_Clean]"
+                      name="HealthRegime_Clean" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Zone_Clean]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Zone_Clean]"
+                      length="255"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Zone_Clean]"
+                      name="Zone_Clean" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Stratum_Clean]"
+                      dataType="ui1"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Stratum_Clean]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Stratum_Clean]"
+                      name="Stratum_Clean" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SourceRowId_Int]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SourceRowId_Int]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SourceRowId_Int]"
+                      name="SourceRowId_Int" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[ReportedAge_Int]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[ReportedAge_Int]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[ReportedAge_Int]"
+                      name="ReportedAge_Int" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SurveyDate_Date]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SurveyDate_Date]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[SurveyDate_Date]"
+                      name="SurveyDate_Date"
+                      sortKeyPosition="3" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[UpdatedAt_Ts]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[UpdatedAt_Ts]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[UpdatedAt_Ts]"
+                      name="UpdatedAt_Ts" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[BirthDate_Parsed]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[BirthDate_Parsed]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[BirthDate_Parsed]"
+                      name="BirthDate_Parsed" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmploymentStart_Date]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmploymentStart_Date]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmploymentStart_Date]"
+                      name="EmploymentStart_Date" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Income_Num]"
+                      dataType="numeric"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Income_Num]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Income_Num]"
+                      name="Income_Num"
+                      precision="14"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Expenses_Num]"
+                      dataType="numeric"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Expenses_Num]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Expenses_Num]"
+                      name="Expenses_Num"
+                      precision="14"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Dependents_Int]"
+                      dataType="ui1"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Dependents_Int]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Dependents_Int]"
+                      name="Dependents_Int" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HouseholdSize_Int]"
+                      dataType="ui1"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HouseholdSize_Int]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[HouseholdSize_Int]"
+                      name="HouseholdSize_Int" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Phone_Clean]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Phone_Clean]"
+                      length="15"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Phone_Clean]"
+                      name="Phone_Clean" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Email_Clean]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Email_Clean]"
+                      length="100"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Email_Clean]"
+                      name="Email_Clean" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[BirthDate_Final]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[BirthDate_Final]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[BirthDate_Final]"
+                      name="BirthDate_Final" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmploymentStart_Final]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmploymentStart_Final]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EmploymentStart_Final]"
+                      name="EmploymentStart_Final" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Age_Calc]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Age_Calc]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Age_Calc]"
+                      name="Age_Calc" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DepartmentCode_Ref]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DepartmentCode_Ref]"
+                      length="3"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DepartmentCode_Ref]"
+                      name="DepartmentCode_Ref" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[NivelEducativoId]"
+                      dataType="ui1"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[NivelEducativoId]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[NivelEducativoId]"
+                      name="NivelEducativoId" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EstadoLaboralId]"
+                      dataType="ui1"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EstadoLaboralId]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[EstadoLaboralId]"
+                      name="EstadoLaboralId" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[TipoContratoId]"
+                      dataType="ui1"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[TipoContratoId]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[TipoContratoId]"
+                      name="TipoContratoId" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[OccupationCode_Ref]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[OccupationCode_Ref]"
+                      length="3"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[OccupationCode_Ref]"
+                      name="OccupationCode_Ref" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Motivo_Rechazo]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Motivo_Rechazo]"
+                      length="200"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Motivo_Rechazo]"
+                      name="Motivo_Rechazo" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Rank_Key]"
+                      dataType="i8"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Rank_Key]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Rank_Key]"
+                      name="Rank_Key" />
+                    <outputColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Max_Rank]"
+                      dataType="i8"
+                      externalMetadataColumnId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Max_Rank]"
+                      lineageId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[Max_Rank]"
+                      name="Max_Rank" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SourceRowId]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceRowId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DocumentType]"
+                      dataType="wstr"
+                      length="255"
+                      name="DocumentType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DocumentNumber]"
+                      dataType="wstr"
+                      length="255"
+                      name="DocumentNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="255"
+                      name="MiddleName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="255"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SecondLastName]"
+                      dataType="wstr"
+                      length="255"
+                      name="SecondLastName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[BirthDate]"
+                      dataType="wstr"
+                      length="255"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[ReportedAge]"
+                      dataType="wstr"
+                      length="255"
+                      name="ReportedAge" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Sex]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sex" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MaritalStatus]"
+                      dataType="wstr"
+                      length="255"
+                      name="MaritalStatus" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="255"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DepartmentCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="DepartmentCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DepartmentName]"
+                      dataType="wstr"
+                      length="255"
+                      name="DepartmentName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MunicipalityCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="MunicipalityCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MunicipalityName]"
+                      dataType="wstr"
+                      length="255"
+                      name="MunicipalityName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Zone]"
+                      dataType="wstr"
+                      length="255"
+                      name="Zone" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="255"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HousingType]"
+                      dataType="wstr"
+                      length="255"
+                      name="HousingType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SocioeconomicStratum]"
+                      dataType="wstr"
+                      length="255"
+                      name="SocioeconomicStratum" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EducationLevel]"
+                      dataType="wstr"
+                      length="255"
+                      name="EducationLevel" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmploymentStatus]"
+                      dataType="wstr"
+                      length="255"
+                      name="EmploymentStatus" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[OccupationCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="OccupationCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[OccupationName]"
+                      dataType="wstr"
+                      length="255"
+                      name="OccupationName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmployerName]"
+                      dataType="wstr"
+                      length="255"
+                      name="EmployerName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[ContractType]"
+                      dataType="wstr"
+                      length="255"
+                      name="ContractType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmploymentStartDate]"
+                      dataType="wstr"
+                      length="255"
+                      name="EmploymentStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MonthlyIncome]"
+                      dataType="wstr"
+                      length="255"
+                      name="MonthlyIncome" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[MonthlyExpenses]"
+                      dataType="wstr"
+                      length="255"
+                      name="MonthlyExpenses" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Dependents]"
+                      dataType="wstr"
+                      length="255"
+                      name="Dependents" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HouseholdSize]"
+                      dataType="wstr"
+                      length="255"
+                      name="HouseholdSize" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HealthRegime]"
+                      dataType="wstr"
+                      length="255"
+                      name="HealthRegime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Disability]"
+                      dataType="wstr"
+                      length="255"
+                      name="Disability" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SurveyDate]"
+                      dataType="wstr"
+                      length="255"
+                      name="SurveyDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[UpdatedAt]"
+                      dataType="wstr"
+                      length="255"
+                      name="UpdatedAt" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SourceChannel]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceChannel" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Sex_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sex_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Disability_Clean]"
+                      dataType="wstr"
+                      length="2"
+                      name="Disability_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HealthRegime_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      name="HealthRegime_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Zone_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      name="Zone_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Stratum_Clean]"
+                      dataType="ui1"
+                      name="Stratum_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SourceRowId_Int]"
+                      dataType="i4"
+                      name="SourceRowId_Int" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[ReportedAge_Int]"
+                      dataType="i4"
+                      name="ReportedAge_Int" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[SurveyDate_Date]"
+                      dataType="dbDate"
+                      name="SurveyDate_Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[UpdatedAt_Ts]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedAt_Ts" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[BirthDate_Parsed]"
+                      dataType="dbDate"
+                      name="BirthDate_Parsed" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmploymentStart_Date]"
+                      dataType="dbDate"
+                      name="EmploymentStart_Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Income_Num]"
+                      dataType="numeric"
+                      name="Income_Num"
+                      precision="14"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Expenses_Num]"
+                      dataType="numeric"
+                      name="Expenses_Num"
+                      precision="14"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Dependents_Int]"
+                      dataType="ui1"
+                      name="Dependents_Int" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[HouseholdSize_Int]"
+                      dataType="ui1"
+                      name="HouseholdSize_Int" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Phone_Clean]"
+                      dataType="wstr"
+                      length="15"
+                      name="Phone_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Email_Clean]"
+                      dataType="wstr"
+                      length="100"
+                      name="Email_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[BirthDate_Final]"
+                      dataType="dbDate"
+                      name="BirthDate_Final" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EmploymentStart_Final]"
+                      dataType="dbDate"
+                      name="EmploymentStart_Final" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Age_Calc]"
+                      dataType="i4"
+                      name="Age_Calc" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[DepartmentCode_Ref]"
+                      dataType="wstr"
+                      length="3"
+                      name="DepartmentCode_Ref" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[NivelEducativoId]"
+                      dataType="ui1"
+                      name="NivelEducativoId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[EstadoLaboralId]"
+                      dataType="ui1"
+                      name="EstadoLaboralId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[TipoContratoId]"
+                      dataType="ui1"
+                      name="TipoContratoId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[OccupationCode_Ref]"
+                      dataType="wstr"
+                      length="3"
+                      name="OccupationCode_Ref" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Motivo_Rechazo]"
+                      dataType="wstr"
+                      length="200"
+                      name="Motivo_Rechazo" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Rank_Key]"
+                      dataType="i8"
+                      name="Rank_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output].ExternalColumns[Max_Rank]"
+                      dataType="i8"
+                      name="Max_Rank" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - Cargar OBSERVACION.Paths[Lookup Match Output]"
+              endId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT - Cargar OBSERVACION\LK - Persona.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT - Cargar OBSERVACION.Paths[Lookup No Match Output]"
+              endId="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\DFT - Cargar OBSERVACION\LK - Observacion existente.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\DFT - Cargar OBSERVACION.Paths[Raw File Source Output]"
+              endId="Package\DFT - Cargar OBSERVACION\LK - Persona.Inputs[Lookup Input]"
+              name="Raw File Source Output"
+              startId="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores.Outputs[Raw File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\DFT - Cargar PERSONA"
       DTS:CreationName="Microsoft.Pipeline"
@@ -340,7 +1864,7 @@
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT DocumentType, DocumentNumber, PersonaId FROM dbo.PERSONA) [refTable]
-where [refTable].[DocumentNumber] = ?</property>
+where [refTable].[DocumentType] = ? and [refTable].[DocumentNumber] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -376,7 +1900,7 @@ where [refTable].[DocumentNumber] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT - Cargar PERSONA\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentNumber]};</property>
+                  name="ParameterMap">#{Package\DFT - Cargar PERSONA\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentType]};#{Package\DFT - Cargar PERSONA\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentNumber]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -399,6 +1923,24 @@ where [refTable].[DocumentNumber] = ?</property>
                   refId="Package\DFT - Cargar PERSONA\LK - Persona existente.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Cargar PERSONA\LK - Persona existente.Inputs[Lookup Input].Columns[DocumentType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DocumentType"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT - Cargar PERSONA\RAW - Leer ganadores.Outputs[Raw File Source Output].Columns[DocumentType]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DocumentType</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
                     <inputColumn
                       refId="Package\DFT - Cargar PERSONA\LK - Persona existente.Inputs[Lookup Input].Columns[DocumentNumber]"
                       cachedDataType="wstr"
@@ -9864,49 +11406,49 @@ where [refTable].[Nombre] = ?</property>
               startId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output8]"
-              endId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output7]"
-              endId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Normalizar textos.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output6]"
-              endId="Package\DFT - Excel a Relacional\Data Conversion.Inputs[Data Conversion Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output4]"
               endId="Package\DFT - Excel a Relacional\RC - Rechazos obligatorios.Inputs[Row Count Input 1]"
               name="Derived Column Output"
               startId="Package\DFT - Excel a Relacional\DC - Armar rechazo obligatorios.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output5]"
-              endId="Package\DFT - Excel a Relacional\LK - Municipio.Inputs[Lookup Input]"
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output7]"
+              endId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Inputs[Derived Column Input]"
               name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output]" />
+              startId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output2]"
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output6]"
+              endId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Excel a Relacional\DC - Normalizar textos.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output4]"
               endId="Package\DFT - Excel a Relacional\RC - Rechazos conversion.Inputs[Row Count Input 1]"
               name="Derived Column Output"
               startId="Package\DFT - Excel a Relacional\DC - Armar rechazo conversion.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output1]"
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output5]"
+              endId="Package\DFT - Excel a Relacional\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output2]"
               endId="Package\DFT - Excel a Relacional\MC - Duplicados.Inputs[Multicast Input 1]"
               name="Derived Column Output"
               startId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output]"
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output1]"
               endId="Package\DFT - Excel a Relacional\RC - Duplicados.Inputs[Row Count Input 1]"
               name="Derived Column Output"
               startId="Package\DFT - Excel a Relacional\DC - Armar duplicado.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output3]"
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output]"
               endId="Package\DFT - Excel a Relacional\CS - Datos obligatorios.Inputs[Conditional Split Input]"
               name="Derived Column Output"
               startId="Package\DFT - Excel a Relacional\DC - Motivo de rechazo.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output3]"
+              endId="Package\DFT - Excel a Relacional\LK - Municipio.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Duplicado]"
               endId="Package\DFT - Excel a Relacional\DC - Armar duplicado.Inputs[Derived Column Input]"
@@ -9924,9 +11466,9 @@ where [refTable].[Nombre] = ?</property>
               startId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Outputs[Ganador]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output4]"
-              endId="Package\DFT - Excel a Relacional\LK - Estado laboral.Inputs[Lookup Input]"
+              endId="Package\DFT - Excel a Relacional\LK - Ocupacion.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\DFT - Excel a Relacional\LK - Nivel educativo.Outputs[Lookup Match Output]" />
+              startId="Package\DFT - Excel a Relacional\LK - Tipo contrato.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output3]"
               endId="Package\DFT - Excel a Relacional\LK - Nivel educativo.Inputs[Lookup Input]"
@@ -9934,9 +11476,9 @@ where [refTable].[Nombre] = ?</property>
               startId="Package\DFT - Excel a Relacional\LK - Municipio.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output]"
-              endId="Package\DFT - Excel a Relacional\LK - Ocupacion.Inputs[Lookup Input]"
+              endId="Package\DFT - Excel a Relacional\LK - Tipo contrato.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\DFT - Excel a Relacional\LK - Tipo contrato.Outputs[Lookup Match Output]" />
+              startId="Package\DFT - Excel a Relacional\LK - Estado laboral.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output1]"
               endId="Package\DFT - Excel a Relacional\DC - Motivo de rechazo.Inputs[Derived Column Input]"
@@ -9944,9 +11486,9 @@ where [refTable].[Nombre] = ?</property>
               startId="Package\DFT - Excel a Relacional\LK - Ocupacion.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output2]"
-              endId="Package\DFT - Excel a Relacional\LK - Tipo contrato.Inputs[Lookup Input]"
+              endId="Package\DFT - Excel a Relacional\LK - Estado laboral.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\DFT - Excel a Relacional\LK - Estado laboral.Outputs[Lookup Match Output]" />
+              startId="Package\DFT - Excel a Relacional\LK - Nivel educativo.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Merge Join Output]"
               endId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Inputs[Conditional Split Input]"
@@ -10041,6 +11583,14 @@ where [refTable].[Nombre] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"
       DTS:To="Package\DFT - Cargar PERSONA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{DD440F29-4BD4-4469-9E19-00A7B01265E1}"
+      DTS:From="Package\DFT - Cargar PERSONA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\DFT - Cargar OBSERVACION" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -10054,6 +11604,10 @@ where [refTable].[Nombre] = ?</property>
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\DFT - Cargar OBSERVACION"
+          TopLeft="254.166652779613,292.066664635671" />
         <NodeLayout
           Size="192.8,41.6"
           Id="Package\DFT - Cargar PERSONA"
@@ -10110,9 +11664,184 @@ where [refTable].[Nombre] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="361.549985862524,251.333331874874">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.7333327607975"
+              Start="0,0"
+              End="0,33.2333327607975">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2333327607975" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Cargar OBSERVACION">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION"
+          TopLeft="434.499994220833,407.533329428898" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores"
+          TopLeft="440.999993428588,148.999997779727" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\DFT - Cargar OBSERVACION\LK - Persona"
+          TopLeft="465.999993056059,218.999996736646" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\DFT - Cargar OBSERVACION\LK - Observacion existente"
+          TopLeft="435.999993503094,322.999995186925" />
+        <EdgeLayout
+          Id="Package\DFT - Cargar OBSERVACION.Paths[Raw File Source Output]"
+          TopLeft="534.299993242324,190.599997779727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.3999989569188"
+              Start="0,0"
+              End="0,20.8999989569188">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8999989569188" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Cargar OBSERVACION.Paths[Lookup No Match Output]"
+          TopLeft="535.849993861963,364.599995186925">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.9333342419729"
+              Start="0,0"
+              End="0,35.4333342419729">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4333342419729" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,11.9119796209864,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Cargar OBSERVACION.Paths[Lookup Match Output]"
+          TopLeft="536.599993279576,260.599996736646">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.3999984502793"
+              Start="0,0"
+              End="0,54.8999984502793">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.8999984502793" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,21.6453117251396,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Cargar OBSERVACION\LK - Persona">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Cargar OBSERVACION\LK - Observacion existente">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\DFT - Cargar PERSONA">
     <LayoutInfo>
@@ -10149,7 +11878,9 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10172,7 +11903,7 @@ where [refTable].[Nombre] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,9.14531191140418,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,9.1453119114042,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10221,21 +11952,17 @@ where [refTable].[Nombre] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\DFT - Excel a Relacional\Data Conversion"
-          TopLeft="782.322218276174,310.300000000001" />
+          Size="147.2,41.6"
+          Id="Package\DFT - Excel a Relacional\SO - Completo"
+          TopLeft="81.7222182761744,1631.1" />
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\DFT - Excel a Relacional\LK - Estado laboral"
           TopLeft="512.122218276174,818.300000000001" />
         <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\DFT - Excel a Relacional\MJ - Ganador"
-          TopLeft="192.122211856257,1733.73333201951" />
-        <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\DFT - Excel a Relacional\SO - Agregado"
-          TopLeft="289.722218276174,1631.1" />
+          Size="190.4,41.6"
+          Id="Package\DFT - Excel a Relacional\Destino - DUPLICADOS"
+          TopLeft="361.444426687228,1925.03703505492" />
         <NodeLayout
           Size="265.6,41.6"
           Id="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_RECHAZOS"
@@ -10245,25 +11972,25 @@ where [refTable].[Nombre] = ?</property>
           Id="Package\DFT - Excel a Relacional\RC - Rechazos obligatorios"
           TopLeft="492.922218276174,1427.9" />
         <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\DFT - Excel a Relacional\RC - Rechazos conversion"
-          TopLeft="759.522218276174,513.500000000001" />
-        <NodeLayout
           Size="149.6,41.6"
           Id="Package\DFT - Excel a Relacional\LK - Ocupacion"
           TopLeft="520.522218276174,1021.5" />
         <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\DFT - Excel a Relacional\RC - Ganadores"
-          TopLeft="615.740707098151,1828.6666642359" />
+          Size="156,41.6"
+          Id="Package\DFT - Excel a Relacional\Data Conversion"
+          TopLeft="782.322218276174,310.300000000001" />
         <NodeLayout
           Size="186.4,41.6"
           Id="Package\DFT - Excel a Relacional\DC - Convertir y limpiar"
           TopLeft="502.122218276174,411.900000000001" />
         <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\DFT - Excel a Relacional\RC - Duplicados"
-          TopLeft="134.592587230014,1921.77777520639" />
+          Size="147.2,41.6"
+          Id="Package\DFT - Excel a Relacional\SO - Agregado"
+          TopLeft="289.722218276174,1631.1" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\DFT - Excel a Relacional\RAW - Ganadores"
+          TopLeft="608.533302007782,1916.46666496111" />
         <NodeLayout
           Size="183.2,41.6"
           Id="Package\DFT - Excel a Relacional\DC - Normalizar textos"
@@ -10273,17 +12000,25 @@ where [refTable].[Nombre] = ?</property>
           Id="Package\DFT - Excel a Relacional\CS - Ganador duplicado"
           TopLeft="360.744435459597,1830.44814817493" />
         <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\DFT - Excel a Relacional\RC - Rechazos conversion"
+          TopLeft="759.522218276174,513.500000000001" />
+        <NodeLayout
           Size="180,41.6"
           Id="Package\DFT - Excel a Relacional\DC - Clave de version"
           TopLeft="241.322218276174,1326.3" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\DFT - Excel a Relacional\RC - Ganadores"
+          TopLeft="615.740707098151,1828.6666642359" />
         <NodeLayout
           Size="140,41.6"
           Id="Package\DFT - Excel a Relacional\Excel Source"
           TopLeft="790.322218276174,5.50000000000018" />
         <NodeLayout
-          Size="190.4,41.6"
-          Id="Package\DFT - Excel a Relacional\Destino - DUPLICADOS"
-          TopLeft="361.444426687228,1925.03703505492" />
+          Size="153.6,41.6"
+          Id="Package\DFT - Excel a Relacional\RC - Duplicados"
+          TopLeft="134.592587230014,1921.77777520639" />
         <NodeLayout
           Size="184.8,41.6"
           Id="Package\DFT - Excel a Relacional\CS - Datos obligatorios"
@@ -10296,6 +12031,10 @@ where [refTable].[Nombre] = ?</property>
           Size="187.2,41.6"
           Id="Package\DFT - Excel a Relacional\DC - Motivo de rechazo"
           TopLeft="501.722218276174,1123.1" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\DFT - Excel a Relacional\MJ - Ganador"
+          TopLeft="192.122211856257,1733.73333201951" />
         <NodeLayout
           Size="226.4,41.6"
           Id="Package\DFT - Excel a Relacional\DC - Armar rechazo obligatorios"
@@ -10325,10 +12064,6 @@ where [refTable].[Nombre] = ?</property>
           Id="Package\DFT - Excel a Relacional\DC - Armar rechazo conversion"
           TopLeft="748.722218276174,411.900000000001" />
         <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\DFT - Excel a Relacional\SO - Completo"
-          TopLeft="81.7222182761744,1631.1" />
-        <NodeLayout
           Size="212,41.6"
           Id="Package\DFT - Excel a Relacional\DC - Estandarizar categorias"
           TopLeft="754.322218276174,208.700000000001" />
@@ -10340,366 +12075,6 @@ where [refTable].[Nombre] = ?</property>
           Size="200,41.6"
           Id="Package\DFT - Excel a Relacional\AG - Version mas reciente"
           TopLeft="216.322218276174,1529.5" />
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Excel Source Output]"
-          TopLeft="860.322218276174,47.1000000000002">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000004"
-              Start="0,0"
-              End="0,52.5000000000004">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000004" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Duplicado]"
-          TopLeft="360.744435459597,1852.20925825146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-62.8999975413088,0"
-              Start="0,0"
-              End="-55.3999975413088,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-55.3999975413088,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-49.8370300206544,5,44.2740625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output]"
-          TopLeft="210.018512574151,1873.97036832799">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.8074068783983"
-              Start="0,0"
-              End="0,40.3074068783983">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.3074068783983" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output1]"
-          TopLeft="331.322218276174,1367.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-176,60.0000000000002"
-              Start="0,0"
-              End="-176,52.5000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.0000000000001"
-                    Point2="0,30.0000000000001"
-                    Point3="-4,30.0000000000001" />
-                  <mssgle:LineSegment
-                    End="-172,30.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-172,30.0000000000001"
-                    Point2="-176,30.0000000000001"
-                    Point3="-176,34.0000000000001" />
-                  <mssgle:LineSegment
-                    End="-176,52.5000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output2]"
-          TopLeft="860.322218276174,453.500000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output4]"
-          TopLeft="595.322218276174,1367.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000002"
-              Start="0,0"
-              End="0,52.5000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output3]"
-          TopLeft="595.322218276174,1164.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output8]"
-          TopLeft="595.322218276174,453.500000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output5]"
-          TopLeft="595.322218276174,555.100000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output6]"
-          TopLeft="860.322218276174,250.300000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000004"
-              Start="0,0"
-              End="0,52.5000000000004">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000004" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output7]"
-          TopLeft="860.322218276174,148.700000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000003"
-              Start="0,0"
-              End="0,52.5000000000003">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000003" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Data Conversion Output]"
-          TopLeft="835.655551609508,351.900000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-240.333333333333,60.0000000000001"
-              Start="0,0"
-              End="-240.333333333333,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3654822335026" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.3654822335026"
-                    Point2="0,24.3654822335026"
-                    Point3="-4,24.3654822335026" />
-                  <mssgle:LineSegment
-                    End="-236.333333333333,24.3654822335026" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-236.333333333333,24.3654822335026"
-                    Point2="-240.333333333333,24.3654822335026"
-                    Point3="-240.333333333333,28.3654822335026" />
-                  <mssgle:LineSegment
-                    End="-240.333333333333,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Data Conversion Error Output]"
-          TopLeft="884.988884942841,351.900000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-24.6666666666666,60.0000000000001"
-              Start="0,0"
-              End="-24.6666666666666,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3654822335026" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.3654822335026"
-                    Point2="0,24.3654822335026"
-                    Point3="-4,24.3654822335026" />
-                  <mssgle:LineSegment
-                    End="-20.6666666666666,24.3654822335026" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20.6666666666666,24.3654822335026"
-                    Point2="-24.6666666666666,24.3654822335026"
-                    Point3="-24.6666666666666,28.3654822335026" />
-                  <mssgle:LineSegment
-                    End="-24.6666666666666,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-78.4197200520833,29.3654822335026,132.1727734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Aggregate Output 1]"
-          TopLeft="316.322218276174,1571.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="47,60.0000000000002"
-              Start="0,0"
-              End="47,52.5000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.0000000000001"
-                    Point2="0,30.0000000000001"
-                    Point3="4,30.0000000000001" />
-                  <mssgle:LineSegment
-                    End="43,30.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="43,30.0000000000001"
-                    Point2="47,30.0000000000001"
-                    Point3="47,34.0000000000001" />
-                  <mssgle:LineSegment
-                    End="47,52.5000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Valido]"
           TopLeft="565.855551609508,1266.3">
@@ -10767,7 +12142,9 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10801,7 +12178,33 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Row Count Output 13]"
+          TopLeft="691.337004552967,1870.2666642359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.2000007252132"
+              Start="0,0"
+              End="0,38.7000007252132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.7000007252132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10823,7 +12226,9 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10845,7 +12250,9 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10867,7 +12274,9 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10937,7 +12346,9 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10971,7 +12382,9 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11005,60 +12418,14 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Lookup Match Output]"
-          TopLeft="595.322218276174,961.500000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Lookup Match Output1]"
-          TopLeft="595.322218276174,1063.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Lookup Match Output4]"
-          TopLeft="595.322218276174,758.300000000001">
+          TopLeft="595.322218276174,961.500000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11106,6 +12473,54 @@ where [refTable].[Nombre] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Lookup Match Output2]"
+          TopLeft="595.322218276174,758.300000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Lookup Match Output1]"
+          TopLeft="595.322218276174,1063.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Lookup Match Output]"
           TopLeft="595.322218276174,859.900000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11152,30 +12567,388 @@ where [refTable].[Nombre] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163.2,41.6"
-          Id="Package\DFT - Excel a Relacional\RAW - Ganadores"
-          TopLeft="608.533302007782,1916.46666496111" />
         <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Row Count Output 13]"
-          TopLeft="691.337004552967,1870.2666642359">
+          Id="Package\DFT - Excel a Relacional.Paths[Excel Source Output]"
+          TopLeft="860.322218276174,47.1000000000002">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.2000007252132"
+              EndConnector="0,60.0000000000004"
               Start="0,0"
-              End="0,38.7000007252132">
+              End="0,52.5000000000004">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.7000007252132" />
+                    End="0,52.5000000000004" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Duplicado]"
+          TopLeft="360.744435459597,1852.20925825146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62.8999975413088,0"
+              Start="0,0"
+              End="-55.3999975413088,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-55.3999975413088,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.8370300206544,5,44.2740625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output8]"
+          TopLeft="595.322218276174,1367.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000002"
+              Start="0,0"
+              End="0,52.5000000000002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000002" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output7]"
+          TopLeft="595.322218276174,453.500000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output6]"
+          TopLeft="860.322218276174,148.700000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000003"
+              Start="0,0"
+              End="0,52.5000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output5]"
+          TopLeft="860.322218276174,250.300000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000004"
+              Start="0,0"
+              End="0,52.5000000000004">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000004" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output4]"
+          TopLeft="860.322218276174,453.500000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output3]"
+          TopLeft="595.322218276174,555.100000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output2]"
+          TopLeft="331.322218276174,1367.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-176,60.0000000000002"
+              Start="0,0"
+              End="-176,52.5000000000002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0000000000001"
+                    Point2="0,30.0000000000001"
+                    Point3="-4,30.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-172,30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-172,30.0000000000001"
+                    Point2="-176,30.0000000000001"
+                    Point3="-176,34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-176,52.5000000000002" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output1]"
+          TopLeft="210.018512574151,1873.97036832799">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8074068783983"
+              Start="0,0"
+              End="0,40.3074068783983">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3074068783983" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output]"
+          TopLeft="595.322218276174,1164.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Data Conversion Output]"
+          TopLeft="835.655551609508,351.900000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-240.333333333333,60.0000000000001"
+              Start="0,0"
+              End="-240.333333333333,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3654822335026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3654822335026"
+                    Point2="0,24.3654822335026"
+                    Point3="-4,24.3654822335026" />
+                  <mssgle:LineSegment
+                    End="-236.333333333333,24.3654822335026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-236.333333333333,24.3654822335026"
+                    Point2="-240.333333333333,24.3654822335026"
+                    Point3="-240.333333333333,28.3654822335026" />
+                  <mssgle:LineSegment
+                    End="-240.333333333333,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Data Conversion Error Output]"
+          TopLeft="884.988884942841,351.900000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.6666666666666,60.0000000000001"
+              Start="0,0"
+              End="-24.6666666666666,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3654822335026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3654822335026"
+                    Point2="0,24.3654822335026"
+                    Point3="-4,24.3654822335026" />
+                  <mssgle:LineSegment
+                    End="-20.6666666666666,24.3654822335026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.6666666666666,24.3654822335026"
+                    Point2="-24.6666666666666,24.3654822335026"
+                    Point3="-24.6666666666666,28.3654822335026" />
+                  <mssgle:LineSegment
+                    End="-24.6666666666666,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.4197200520833,29.3654822335026,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Aggregate Output 1]"
+          TopLeft="316.322218276174,1571.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47,60.0000000000002"
+              Start="0,0"
+              End="47,52.5000000000002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0000000000001"
+                    Point2="0,30.0000000000001"
+                    Point3="4,30.0000000000001" />
+                  <mssgle:LineSegment
+                    End="43,30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43,30.0000000000001"
+                    Point2="47,30.0000000000001"
+                    Point3="47,34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="47,52.5000000000002" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
