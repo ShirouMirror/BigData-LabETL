@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{D137E848-93CA-4E5C-AD42-B66E1FFDB92C}">
+  DTS:VersionBuild="100"
+  DTS:VersionGUID="{B34E66FF-02D6-4F6F-B2E4-B55E7201343D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -3065,6 +3065,192 @@ where [refTable].[DocumentType] = ? and [refTable].[DocumentNumber] = ?</propert
               </outputs>
             </component>
             <component
+              refId="Package\DFT - Excel a Relacional\CS - Cambio ingreso"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="CS - Cambio ingreso"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Inputs[Conditional Split Input].Columns[MonthlyIncome]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MonthlyIncome"
+                      lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MonthlyIncome]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Outputs[Cambio]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Cambio"
+                  synchronousInputId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MonthlyIncome]}) &amp;&amp; [FINDSTRING](#{Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MonthlyIncome]},"$",1) &gt; 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(MonthlyIncome) &amp;&amp; FINDSTRING(MonthlyIncome,"$",1) &gt; 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Excel a Relacional\CS - Cambio sexo"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="CS - Cambio sexo"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Inputs[Conditional Split Input].Columns[Sex]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sex"
+                      lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Inputs[Conditional Split Input].Columns[Sex_Clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sex_Clean"
+                      lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex_Clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Outputs[Cambio]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Cambio"
+                  synchronousInputId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex]}) &amp;&amp; #{Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex]} != #{Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex_Clean]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(Sex) &amp;&amp; Sex != Sex_Clean</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DFT - Excel a Relacional\CS - Datos obligatorios"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -3395,6 +3581,365 @@ where [refTable].[DocumentType] = ? and [refTable].[DocumentNumber] = ?</propert
                       refId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DC - Armar cambio ingreso"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Inputs[Derived Column Input].Columns[MonthlyIncome]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MonthlyIncome"
+                      lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MonthlyIncome]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Inputs[Derived Column Input].Columns[Income_Num]"
+                      cachedDataType="numeric"
+                      cachedName="Income_Num"
+                      cachedPrecision="14"
+                      cachedScale="2"
+                      lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Income_Num]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[Campo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="13"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[Campo]"
+                      name="Campo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"MonthlyIncome"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"MonthlyIncome"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[ValorOriginal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[ValorOriginal]"
+                      name="ValorOriginal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,255)#{Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[MonthlyIncome]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,255)MonthlyIncome</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[ValorNuevo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[ValorNuevo]"
+                      name="ValorNuevo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,255)#{Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Income_Num]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,255)Income_Num</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[Regla]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="53"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[Regla]"
+                      name="Regla"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Importe con símbolo y separadores convertido a número"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Importe con símbolo y separadores convertido a número"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[FechaProceso]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[FechaProceso]"
+                      name="FechaProceso"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP2,0)[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP2,0)GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DC - Armar cambio sexo"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Inputs[Derived Column Input].Columns[Sex]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sex"
+                      lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Inputs[Derived Column Input].Columns[Sex_Clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sex_Clean"
+                      lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex_Clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[Campo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[Campo]"
+                      name="Campo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Sex"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Sex"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[ValorOriginal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[ValorOriginal]"
+                      name="ValorOriginal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,255)#{Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,255)Sex</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[ValorNuevo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[ValorNuevo]"
+                      name="ValorNuevo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,255)#{Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[Sex_Clean]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,255)Sex_Clean</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[Regla]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="23"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[Regla]"
+                      name="Regla"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Sexo inválido pasa a ND"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Sexo inválido pasa a ND"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[FechaProceso]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[FechaProceso]"
+                      name="FechaProceso"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP2,0)[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP2,0)GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -5117,6 +5662,182 @@ where [refTable].[DocumentType] = ? and [refTable].[DocumentNumber] = ?</propert
               </outputs>
             </component>
             <component
+              refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destino - CAMBIOS ingreso"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ETL_REGISTRO_CAMBIOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Connections[OleDbConnection]"
+                  connectionManagerID="{671AAD0A-783A-421F-BB81-2B9F2A939388}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[JakeASUS.ETL_Personas_REL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].Columns[SourceRowId]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SourceRowId"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[SourceRowId]"
+                      lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SourceRowId]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].Columns[Campo]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="Campo"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[Campo]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[Campo]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].Columns[ValorOriginal]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ValorOriginal"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[ValorOriginal]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[ValorOriginal]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].Columns[ValorNuevo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ValorNuevo"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[ValorNuevo]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[ValorNuevo]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].Columns[Regla]"
+                      cachedDataType="wstr"
+                      cachedLength="53"
+                      cachedName="Regla"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[Regla]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[Regla]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].Columns[FechaProceso]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="FechaProceso"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[FechaProceso]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output].Columns[FechaProceso]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[CambioId]"
+                      dataType="i4"
+                      name="CambioId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[SourceRowId]"
+                      dataType="i4"
+                      name="SourceRowId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[Campo]"
+                      dataType="wstr"
+                      length="40"
+                      name="Campo" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[ValorOriginal]"
+                      dataType="wstr"
+                      length="100"
+                      name="ValorOriginal" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[ValorNuevo]"
+                      dataType="wstr"
+                      length="100"
+                      name="ValorNuevo" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[Regla]"
+                      dataType="wstr"
+                      length="100"
+                      name="Regla" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input].ExternalColumns[FechaProceso]"
+                      dataType="dbTimeStamp2"
+                      name="FechaProceso" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DFT - Excel a Relacional\Destino - DUPLICADOS"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -5292,6 +6013,181 @@ where [refTable].[DocumentType] = ? and [refTable].[DocumentNumber] = ?</propert
                       refId="Package\DFT - Excel a Relacional\Destino - DUPLICADOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT - Excel a Relacional\Destino - DUPLICADOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destino - ETL_REGISTRO_CAMBIOS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ETL_REGISTRO_CAMBIOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Connections[OleDbConnection]"
+                  connectionManagerID="{671AAD0A-783A-421F-BB81-2B9F2A939388}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[JakeASUS.ETL_Personas_REL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].Columns[Campo]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Campo"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[Campo]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[Campo]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].Columns[ValorOriginal]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ValorOriginal"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[ValorOriginal]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[ValorOriginal]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].Columns[ValorNuevo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ValorNuevo"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[ValorNuevo]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[ValorNuevo]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].Columns[Regla]"
+                      cachedDataType="wstr"
+                      cachedLength="23"
+                      cachedName="Regla"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[Regla]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[Regla]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].Columns[SourceRowId_Int]"
+                      cachedDataType="i4"
+                      cachedName="SourceRowId_Int"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[SourceRowId]"
+                      lineageId="Package\DFT - Excel a Relacional\MJ - Ganador.Outputs[Merge Join Output].Columns[SourceRowId_Int]" />
+                    <inputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].Columns[FechaProceso]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="FechaProceso"
+                      externalMetadataColumnId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[FechaProceso]"
+                      lineageId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output].Columns[FechaProceso]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[CambioId]"
+                      dataType="i4"
+                      name="CambioId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[SourceRowId]"
+                      dataType="i4"
+                      name="SourceRowId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[Campo]"
+                      dataType="wstr"
+                      length="40"
+                      name="Campo" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[ValorOriginal]"
+                      dataType="wstr"
+                      length="100"
+                      name="ValorOriginal" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[ValorNuevo]"
+                      dataType="wstr"
+                      length="100"
+                      name="ValorNuevo" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[Regla]"
+                      dataType="wstr"
+                      length="100"
+                      name="Regla" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input].ExternalColumns[FechaProceso]"
+                      dataType="dbTimeStamp2"
+                      name="FechaProceso" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -7341,6 +8237,51 @@ where [refTable].[Nombre] = ?</property>
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 2"
                   synchronousInputId="Package\DFT - Excel a Relacional\MC - Duplicados.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Excel a Relacional\MC - Ganadores"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="MC - Ganadores">
+              <inputs>
+                <input
+                  refId="Package\DFT - Excel a Relacional\MC - Ganadores.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Excel a Relacional\MC - Ganadores.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DFT - Excel a Relacional\MC - Ganadores.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Excel a Relacional\MC - Ganadores.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DFT - Excel a Relacional\MC - Ganadores.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Excel a Relacional\MC - Ganadores.Outputs[Multicast Output 3]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\DFT - Excel a Relacional\MC - Ganadores.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Excel a Relacional\MC - Ganadores.Outputs[Multicast Output 4]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 4"
+                  synchronousInputId="Package\DFT - Excel a Relacional\MC - Ganadores.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -11395,6 +12336,16 @@ where [refTable].[Nombre] = ?</property>
               name="Aggregate Output 1"
               startId="Package\DFT - Excel a Relacional\AG - Version mas reciente.Outputs[Aggregate Output 1]" />
             <path
+              refId="Package\DFT - Excel a Relacional.Paths[Cambio]"
+              endId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Inputs[Derived Column Input]"
+              name="Cambio"
+              startId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Outputs[Cambio]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Cambio1]"
+              endId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Inputs[Derived Column Input]"
+              name="Cambio"
+              startId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Outputs[Cambio]" />
+            <path
               refId="Package\DFT - Excel a Relacional.Paths[Data Conversion Error Output]"
               endId="Package\DFT - Excel a Relacional\DC - Armar rechazo conversion.Inputs[Derived Column Input]"
               name="Data Conversion Error Output"
@@ -11405,50 +12356,60 @@ where [refTable].[Nombre] = ?</property>
               name="Data Conversion Output"
               startId="Package\DFT - Excel a Relacional\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output8]"
-              endId="Package\DFT - Excel a Relacional\RC - Rechazos obligatorios.Inputs[Row Count Input 1]"
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output10]"
+              endId="Package\DFT - Excel a Relacional\RC - Rechazos conversion.Inputs[Row Count Input 1]"
               name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Armar rechazo obligatorios.Outputs[Derived Column Output]" />
+              startId="Package\DFT - Excel a Relacional\DC - Armar rechazo conversion.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output9]"
+              endId="Package\DFT - Excel a Relacional\LK - Municipio.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output8]"
+              endId="Package\DFT - Excel a Relacional\CS - Datos obligatorios.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Excel a Relacional\DC - Motivo de rechazo.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output7]"
-              endId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Inputs[Derived Column Input]"
+              endId="Package\DFT - Excel a Relacional\RC - Duplicados.Inputs[Row Count Input 1]"
               name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output]" />
+              startId="Package\DFT - Excel a Relacional\DC - Armar duplicado.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output6]"
+              endId="Package\DFT - Excel a Relacional\MC - Duplicados.Inputs[Multicast Input 1]"
+              name="Derived Column Output"
+              startId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output3]"
               endId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\DFT - Excel a Relacional\DC - Normalizar textos.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output4]"
-              endId="Package\DFT - Excel a Relacional\RC - Rechazos conversion.Inputs[Row Count Input 1]"
+              endId="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Armar rechazo conversion.Outputs[Derived Column Output]" />
+              startId="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output5]"
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output2]"
+              endId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Excel a Relacional\DC - Convertir y limpiar.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output1]"
               endId="Package\DFT - Excel a Relacional\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\DFT - Excel a Relacional\DC - Estandarizar categorias.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output2]"
-              endId="Package\DFT - Excel a Relacional\MC - Duplicados.Inputs[Multicast Input 1]"
-              name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Clave de version.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output1]"
-              endId="Package\DFT - Excel a Relacional\RC - Duplicados.Inputs[Row Count Input 1]"
-              name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Armar duplicado.Outputs[Derived Column Output]" />
-            <path
               refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output]"
-              endId="Package\DFT - Excel a Relacional\CS - Datos obligatorios.Inputs[Conditional Split Input]"
+              endId="Package\DFT - Excel a Relacional\RC - Rechazos obligatorios.Inputs[Row Count Input 1]"
               name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Motivo de rechazo.Outputs[Derived Column Output]" />
+              startId="Package\DFT - Excel a Relacional\DC - Armar rechazo obligatorios.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output3]"
-              endId="Package\DFT - Excel a Relacional\LK - Municipio.Inputs[Lookup Input]"
+              refId="Package\DFT - Excel a Relacional.Paths[Derived Column Output5]"
+              endId="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\DFT - Excel a Relacional\DC - Validar fechas y edad.Outputs[Derived Column Output]" />
+              startId="Package\DFT - Excel a Relacional\DC - Armar cambio sexo.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Duplicado]"
               endId="Package\DFT - Excel a Relacional\DC - Armar duplicado.Inputs[Derived Column Input]"
@@ -11461,19 +12422,9 @@ where [refTable].[Nombre] = ?</property>
               startId="Package\DFT - Excel a Relacional\Excel Source.Outputs[Excel Source Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Ganador]"
-              endId="Package\DFT - Excel a Relacional\RC - Ganadores.Inputs[Row Count Input 1]"
+              endId="Package\DFT - Excel a Relacional\MC - Ganadores.Inputs[Multicast Input 1]"
               name="Ganador"
               startId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Outputs[Ganador]" />
-            <path
-              refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output4]"
-              endId="Package\DFT - Excel a Relacional\LK - Ocupacion.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\DFT - Excel a Relacional\LK - Tipo contrato.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output3]"
-              endId="Package\DFT - Excel a Relacional\LK - Nivel educativo.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\DFT - Excel a Relacional\LK - Municipio.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output]"
               endId="Package\DFT - Excel a Relacional\LK - Tipo contrato.Inputs[Lookup Input]"
@@ -11486,9 +12437,19 @@ where [refTable].[Nombre] = ?</property>
               startId="Package\DFT - Excel a Relacional\LK - Ocupacion.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output2]"
+              endId="Package\DFT - Excel a Relacional\LK - Nivel educativo.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT - Excel a Relacional\LK - Municipio.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output3]"
               endId="Package\DFT - Excel a Relacional\LK - Estado laboral.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\DFT - Excel a Relacional\LK - Nivel educativo.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Lookup Match Output4]"
+              endId="Package\DFT - Excel a Relacional\LK - Ocupacion.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT - Excel a Relacional\LK - Tipo contrato.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Merge Join Output]"
               endId="Package\DFT - Excel a Relacional\CS - Ganador duplicado.Inputs[Conditional Split Input]"
@@ -11500,10 +12461,25 @@ where [refTable].[Nombre] = ?</property>
               name="Multicast Output 1"
               startId="Package\DFT - Excel a Relacional\MC - Duplicados.Outputs[Multicast Output 1]" />
             <path
+              refId="Package\DFT - Excel a Relacional.Paths[Multicast Output 11]"
+              endId="Package\DFT - Excel a Relacional\RC - Ganadores.Inputs[Row Count Input 1]"
+              name="Multicast Output 1"
+              startId="Package\DFT - Excel a Relacional\MC - Ganadores.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Multicast Output 21]"
+              endId="Package\DFT - Excel a Relacional\CS - Cambio sexo.Inputs[Conditional Split Input]"
+              name="Multicast Output 2"
+              startId="Package\DFT - Excel a Relacional\MC - Ganadores.Outputs[Multicast Output 2]" />
+            <path
               refId="Package\DFT - Excel a Relacional.Paths[Multicast Output 2]"
               endId="Package\DFT - Excel a Relacional\SO - Completo.Inputs[Sort Input]"
               name="Multicast Output 2"
               startId="Package\DFT - Excel a Relacional\MC - Duplicados.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Multicast Output 3]"
+              endId="Package\DFT - Excel a Relacional\CS - Cambio ingreso.Inputs[Conditional Split Input]"
+              name="Multicast Output 3"
+              startId="Package\DFT - Excel a Relacional\MC - Ganadores.Outputs[Multicast Output 3]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Rechazado]"
               endId="Package\DFT - Excel a Relacional\DC - Armar rechazo obligatorios.Inputs[Derived Column Input]"
@@ -11516,29 +12492,29 @@ where [refTable].[Nombre] = ?</property>
               startId="Package\DFT - Excel a Relacional\RC - Rechazos conversion.Outputs[Row Count Output 1]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Row Count Output 11]"
-              endId="Package\DFT - Excel a Relacional\Destino - RECHAZOS obligatorios.Inputs[OLE DB Destination Input]"
-              name="Row Count Output 1"
-              startId="Package\DFT - Excel a Relacional\RC - Rechazos obligatorios.Outputs[Row Count Output 1]" />
-            <path
-              refId="Package\DFT - Excel a Relacional.Paths[Row Count Output 12]"
               endId="Package\DFT - Excel a Relacional\Destino - DUPLICADOS.Inputs[OLE DB Destination Input]"
               name="Row Count Output 1"
               startId="Package\DFT - Excel a Relacional\RC - Duplicados.Outputs[Row Count Output 1]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Row Count Output 13]"
+              refId="Package\DFT - Excel a Relacional.Paths[Row Count Output 12]"
               endId="Package\DFT - Excel a Relacional\RAW - Ganadores.Inputs[Raw File Destination Input]"
               name="Row Count Output 1"
               startId="Package\DFT - Excel a Relacional\RC - Ganadores.Outputs[Row Count Output 1]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Sort Output1]"
-              endId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output]" />
+              refId="Package\DFT - Excel a Relacional.Paths[Row Count Output 13]"
+              endId="Package\DFT - Excel a Relacional\Destino - RECHAZOS obligatorios.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT - Excel a Relacional\RC - Rechazos obligatorios.Outputs[Row Count Output 1]" />
             <path
-              refId="Package\DFT - Excel a Relacional.Paths[Sort Output]"
+              refId="Package\DFT - Excel a Relacional.Paths[Sort Output1]"
               endId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\DFT - Excel a Relacional\SO - Agregado.Outputs[Sort Output]" />
+            <path
+              refId="Package\DFT - Excel a Relacional.Paths[Sort Output]"
+              endId="Package\DFT - Excel a Relacional\MJ - Ganador.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DFT - Excel a Relacional\SO - Completo.Outputs[Sort Output]" />
             <path
               refId="Package\DFT - Excel a Relacional.Paths[Valido]"
               endId="Package\DFT - Excel a Relacional\DC - Clave de version.Inputs[Derived Column Input]"
@@ -11695,17 +12671,17 @@ where [refTable].[Nombre] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="199.2,41.6"
-          Id="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION"
-          TopLeft="434.499994220833,407.533329428898" />
+          Size="139.2,41.6"
+          Id="Package\DFT - Cargar OBSERVACION\LK - Persona"
+          TopLeft="465.999993056059,218.999996736646" />
         <NodeLayout
           Size="184,41.6"
           Id="Package\DFT - Cargar OBSERVACION\RAW - Leer ganadores"
           TopLeft="440.999993428588,148.999997779727" />
         <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\DFT - Cargar OBSERVACION\LK - Persona"
-          TopLeft="465.999993056059,218.999996736646" />
+          Size="199.2,41.6"
+          Id="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION"
+          TopLeft="434.499994220833,407.533329428898" />
         <NodeLayout
           Size="203.2,41.6"
           Id="Package\DFT - Cargar OBSERVACION\LK - Observacion existente"
@@ -11784,19 +12760,6 @@ where [refTable].[Nombre] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DFT - Cargar OBSERVACION\LK - Persona">
     <Properties>
       <Property>
@@ -11816,6 +12779,19 @@ where [refTable].[Nombre] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Cargar OBSERVACION\Destino - OBSERVACION">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -11878,9 +12854,7 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11950,107 +12924,51 @@ where [refTable].[Nombre] = ?</property>
     design-time-name="Package\DFT - Excel a Relacional">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\DFT - Excel a Relacional\SO - Completo"
-          TopLeft="81.7222182761744,1631.1" />
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\DFT - Excel a Relacional\LK - Estado laboral"
-          TopLeft="512.122218276174,818.300000000001" />
-        <NodeLayout
-          Size="190.4,41.6"
-          Id="Package\DFT - Excel a Relacional\Destino - DUPLICADOS"
-          TopLeft="361.444426687228,1925.03703505492" />
-        <NodeLayout
-          Size="265.6,41.6"
-          Id="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_RECHAZOS"
-          TopLeft="727.522218276174,615.100000000001" />
-        <NodeLayout
-          Size="204.8,41.6"
-          Id="Package\DFT - Excel a Relacional\RC - Rechazos obligatorios"
-          TopLeft="492.922218276174,1427.9" />
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\DFT - Excel a Relacional\LK - Ocupacion"
-          TopLeft="520.522218276174,1021.5" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\DFT - Excel a Relacional\Data Conversion"
-          TopLeft="782.322218276174,310.300000000001" />
-        <NodeLayout
-          Size="186.4,41.6"
-          Id="Package\DFT - Excel a Relacional\DC - Convertir y limpiar"
-          TopLeft="502.122218276174,411.900000000001" />
-        <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\DFT - Excel a Relacional\SO - Agregado"
-          TopLeft="289.722218276174,1631.1" />
-        <NodeLayout
-          Size="163.2,41.6"
-          Id="Package\DFT - Excel a Relacional\RAW - Ganadores"
-          TopLeft="608.533302007782,1916.46666496111" />
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\DFT - Excel a Relacional\DC - Normalizar textos"
-          TopLeft="768.722218276174,107.100000000001" />
-        <NodeLayout
-          Size="189.6,41.6"
-          Id="Package\DFT - Excel a Relacional\CS - Ganador duplicado"
-          TopLeft="360.744435459597,1830.44814817493" />
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\DFT - Excel a Relacional\RC - Rechazos conversion"
-          TopLeft="759.522218276174,513.500000000001" />
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\DFT - Excel a Relacional\DC - Clave de version"
-          TopLeft="241.322218276174,1326.3" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\DFT - Excel a Relacional\RC - Ganadores"
-          TopLeft="615.740707098151,1828.6666642359" />
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\DFT - Excel a Relacional\Excel Source"
-          TopLeft="790.322218276174,5.50000000000018" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\DFT - Excel a Relacional\RC - Duplicados"
-          TopLeft="134.592587230014,1921.77777520639" />
-        <NodeLayout
-          Size="184.8,41.6"
-          Id="Package\DFT - Excel a Relacional\CS - Datos obligatorios"
-          TopLeft="502.922218276174,1224.7" />
-        <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\DFT - Excel a Relacional\DC - Armar duplicado"
-          TopLeft="119.444437918288,1832.37036832799" />
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\DFT - Excel a Relacional\DC - Motivo de rechazo"
-          TopLeft="501.722218276174,1123.1" />
-        <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\DFT - Excel a Relacional\MJ - Ganador"
-          TopLeft="192.122211856257,1733.73333201951" />
-        <NodeLayout
-          Size="226.4,41.6"
-          Id="Package\DFT - Excel a Relacional\DC - Armar rechazo obligatorios"
-          TopLeft="482.122218276174,1326.3" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\DFT - Excel a Relacional\MC - Duplicados"
-          TopLeft="77.7222182761744,1427.9" />
+          Size="255.2,41.6"
+          Id="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS"
+          TopLeft="260.999996110797,1989.79999533594" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DFT - Excel a Relacional\LK - Nivel educativo"
           TopLeft="510.122218276174,716.700000000001" />
         <NodeLayout
-          Size="202.4,41.6"
-          Id="Package\DFT - Excel a Relacional\DC - Validar fechas y edad"
-          TopLeft="494.122218276174,513.500000000001" />
+          Size="212,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Estandarizar categorias"
+          TopLeft="754.322218276174,208.700000000001" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\DFT - Excel a Relacional\CS - Ganador duplicado"
+          TopLeft="360.744435459597,1830.44814817493" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\DFT - Excel a Relacional\Excel Source"
+          TopLeft="790.322218276174,5.50000000000018" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\DFT - Excel a Relacional\MC - Ganadores"
+          TopLeft="601.999991029501,1828.99999664724" />
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Armar rechazo conversion"
+          TopLeft="748.722218276174,411.900000000001" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\DFT - Excel a Relacional\MC - Duplicados"
+          TopLeft="77.7222182761744,1427.9" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Armar duplicado"
+          TopLeft="119.444437918288,1832.37036832799" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\DFT - Excel a Relacional\CS - Datos obligatorios"
+          TopLeft="502.922218276174,1224.7" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\DFT - Excel a Relacional\RC - Ganadores"
+          TopLeft="793.740704445744,1826.6666642657" />
         <NodeLayout
           Size="144,41.6"
           Id="Package\DFT - Excel a Relacional\LK - Municipio"
@@ -12060,21 +12978,105 @@ where [refTable].[Nombre] = ?</property>
           Id="Package\DFT - Excel a Relacional\Destino - RECHAZOS obligatorios"
           TopLeft="476.922218276174,1529.5" />
         <NodeLayout
-          Size="223.2,41.6"
-          Id="Package\DFT - Excel a Relacional\DC - Armar rechazo conversion"
-          TopLeft="748.722218276174,411.900000000001" />
+          Size="162.4,41.6"
+          Id="Package\DFT - Excel a Relacional\CS - Cambio sexo"
+          TopLeft="593.99999114871,1909.59999552965" />
         <NodeLayout
-          Size="212,41.6"
-          Id="Package\DFT - Excel a Relacional\DC - Estandarizar categorias"
-          TopLeft="754.322218276174,208.700000000001" />
+          Size="190.4,41.6"
+          Id="Package\DFT - Excel a Relacional\Destino - DUPLICADOS"
+          TopLeft="361.444426687228,1925.03703505492" />
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Armar cambio sexo"
+          TopLeft="575.999991416931,1992.59999429285" />
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\DFT - Excel a Relacional\LK - Tipo contrato"
           TopLeft="514.922218276174,919.900000000001" />
         <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Convertir y limpiar"
+          TopLeft="502.122218276174,411.900000000001" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\DFT - Excel a Relacional\SO - Completo"
+          TopLeft="81.7222182761744,1631.1" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Normalizar textos"
+          TopLeft="768.722218276174,107.100000000001" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\DFT - Excel a Relacional\LK - Estado laboral"
+          TopLeft="512.122218276174,818.300000000001" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Clave de version"
+          TopLeft="241.322218276174,1326.3" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Armar cambio ingreso"
+          TopLeft="591.999991178512,1634.39999904632" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso"
+          TopLeft="847.999987363815,1634.19999989569" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\DFT - Excel a Relacional\LK - Ocupacion"
+          TopLeft="520.522218276174,1021.5" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\DFT - Excel a Relacional\RAW - Ganadores"
+          TopLeft="785.533299370277,1897.46666524423" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Motivo de rechazo"
+          TopLeft="501.722218276174,1123.1" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\DFT - Excel a Relacional\SO - Agregado"
+          TopLeft="289.722218276174,1631.1" />
+        <NodeLayout
+          Size="226.4,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Armar rechazo obligatorios"
+          TopLeft="482.122218276174,1326.3" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\DFT - Excel a Relacional\RC - Rechazos obligatorios"
+          TopLeft="492.922218276174,1427.9" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\DFT - Excel a Relacional\RC - Rechazos conversion"
+          TopLeft="759.522218276174,513.500000000001" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\DFT - Excel a Relacional\RC - Duplicados"
+          TopLeft="134.592587230014,1921.77777520639" />
+        <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\DFT - Excel a Relacional\DC - Validar fechas y edad"
+          TopLeft="494.122218276174,513.500000000001" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\DFT - Excel a Relacional\MJ - Ganador"
+          TopLeft="192.122211856257,1733.73333201951" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\DFT - Excel a Relacional\Data Conversion"
+          TopLeft="782.322218276174,310.300000000001" />
+        <NodeLayout
+          Size="265.6,41.6"
+          Id="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_RECHAZOS"
+          TopLeft="727.522218276174,615.100000000001" />
+        <NodeLayout
           Size="200,41.6"
           Id="Package\DFT - Excel a Relacional\AG - Version mas reciente"
           TopLeft="216.322218276174,1529.5" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\DFT - Excel a Relacional\CS - Cambio ingreso"
+          TopLeft="607.999990940094,1718.39999779463" />
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Valido]"
           TopLeft="565.855551609508,1266.3">
@@ -12113,42 +13115,6 @@ where [refTable].[Nombre] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Sort Output1]"
-          TopLeft="155.322218276174,1672.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="107.599993580083,61.033332019513"
-              Start="0,0"
-              End="107.599993580083,53.533332019513">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5166660097565" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.5166660097565"
-                    Point2="0,30.5166660097565"
-                    Point3="4,30.5166660097565" />
-                  <mssgle:LineSegment
-                    End="103.599993580083,30.5166660097565" />
-                  <mssgle:CubicBezierSegment
-                    Point1="103.599993580083,30.5166660097565"
-                    Point2="107.599993580083,30.5166660097565"
-                    Point3="107.599993580083,34.5166660097565" />
-                  <mssgle:LineSegment
-                    End="107.599993580083,53.533332019513" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Sort Output]"
           TopLeft="363.322218276174,1672.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12178,61 +13144,45 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Sort Output]"
+          TopLeft="155.322218276174,1672.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.599993580083,61.033332019513"
+              Start="0,0"
+              End="107.599993580083,53.533332019513">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5166660097565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5166660097565"
+                    Point2="0,30.5166660097565"
+                    Point3="4,30.5166660097565" />
+                  <mssgle:LineSegment
+                    End="103.599993580083,30.5166660097565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.599993580083,30.5166660097565"
+                    Point2="107.599993580083,30.5166660097565"
+                    Point3="107.599993580083,34.5166660097565" />
+                  <mssgle:LineSegment
+                    End="107.599993580083,53.533332019513" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Row Count Output 13]"
-          TopLeft="691.337004552967,1870.2666642359">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.2000007252132"
-              Start="0,0"
-              End="0,38.7000007252132">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.7000007252132" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Row Count Output 12]"
-          TopLeft="288.192587230014,1944.20740513066">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.2518394572139,0"
-              Start="0,0"
-              End="65.7518394572139,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="65.7518394572139,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Row Count Output 11]"
           TopLeft="595.322218276174,1469.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12250,9 +13200,51 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Row Count Output 12]"
+          TopLeft="870.03700190801,1868.2666642657">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.2000009785297"
+              Start="0,0"
+              End="0,21.7000009785297">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7000009785297" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Row Count Output 11]"
+          TopLeft="288.192587230014,1944.20740513066">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.2518394572139,0"
+              Start="0,0"
+              End="65.7518394572139,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.7518394572139,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12274,9 +13266,7 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12316,6 +13306,62 @@ where [refTable].[Nombre] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Multicast Output 3]"
+          TopLeft="679.599991029501,1828.99999664724">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5999999105927,-68.999998852612"
+              Start="0,0"
+              End="15.5999999105927,-61.499998852612">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-30.499999426306" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-30.499999426306"
+                    Point2="0,-34.499999426306"
+                    Point3="4,-34.499999426306" />
+                  <mssgle:LineSegment
+                    End="11.5999999105927,-34.499999426306" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5999999105927,-34.499999426306"
+                    Point2="15.5999999105927,-34.499999426306"
+                    Point3="15.5999999105927,-38.499999426306" />
+                  <mssgle:LineSegment
+                    End="15.5999999105927,-61.499998852612" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Multicast Output 21]"
+          TopLeft="677.399991089106,1870.59999664724">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.9999988824129"
+              Start="0,0"
+              End="0,31.4999988824129">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.4999988824129" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Multicast Output 2]"
           TopLeft="130.788884942841,1469.5">
           <EdgeLayout.Curve>
@@ -12346,9 +13392,29 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Multicast Output 11]"
+          TopLeft="757.199991029501,1848.63333045647">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.5407134162432,0"
+              Start="0,0"
+              End="29.0407134162432,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.0407134162432,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12382,9 +13448,7 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12418,9 +13482,7 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12449,7 +13511,7 @@ where [refTable].[Nombre] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Lookup Match Output3]"
-          TopLeft="595.322218276174,656.700000000001">
+          TopLeft="595.322218276174,758.300000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12473,7 +13535,7 @@ where [refTable].[Nombre] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Lookup Match Output2]"
-          TopLeft="595.322218276174,758.300000000001">
+          TopLeft="595.322218276174,656.700000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12545,25 +13607,25 @@ where [refTable].[Nombre] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Ganador]"
-          TopLeft="550.344435459597,1850.35740620542">
+          TopLeft="550.344435459597,1850.52407241108">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.3962716385544,0"
+              EndConnector="51.6555555699039,0"
               Start="0,0"
-              End="57.8962716385544,0">
+              End="44.1555555699039,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="57.8962716385544,0" />
+                    End="44.1555555699039,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="9.4769248817772,5,38.942421875,9.7490234375"
+              BoundingBox="2.60656684745195,5,38.942421875,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12586,9 +13648,7 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12616,103 +13676,7 @@ where [refTable].[Nombre] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output8]"
-          TopLeft="595.322218276174,1367.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000002"
-              Start="0,0"
-              End="0,52.5000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output7]"
-          TopLeft="595.322218276174,453.500000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output6]"
-          TopLeft="860.322218276174,148.700000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000003"
-              Start="0,0"
-              End="0,52.5000000000003">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000003" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output5]"
-          TopLeft="860.322218276174,250.300000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000004"
-              Start="0,0"
-              End="0,52.5000000000004">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000004" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output4]"
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output10]"
           TopLeft="860.322218276174,453.500000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12730,13 +13694,11 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output3]"
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output9]"
           TopLeft="595.322218276174,555.100000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12754,13 +13716,55 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output2]"
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output8]"
+          TopLeft="595.322218276174,1164.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output7]"
+          TopLeft="210.018512574151,1873.97036832799">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8074068783983"
+              Start="0,0"
+              End="0,40.3074068783983">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3074068783983" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output6]"
           TopLeft="331.322218276174,1367.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12790,57 +13794,139 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output5]"
+          TopLeft="575.999991416931,2011.9999948144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.7999953061342,0"
+              Start="0,0"
+              End="-52.2999953061342,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-52.2999953061342,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output4]"
+          TopLeft="795.999991178512,1655.09999947101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.9999961853031,0"
+              Start="0,0"
+              End="44.4999961853031,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.4999961853031,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output3]"
+          TopLeft="860.322218276174,148.700000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000003"
+              Start="0,0"
+              End="0,52.5000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output2]"
+          TopLeft="595.322218276174,453.500000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output1]"
-          TopLeft="210.018512574151,1873.97036832799">
+          TopLeft="860.322218276174,250.300000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.8074068783983"
+              EndConnector="0,60.0000000000004"
               Start="0,0"
-              End="0,40.3074068783983">
+              End="0,52.5000000000004">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.3074068783983" />
+                    End="0,52.5000000000004" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Derived Column Output]"
-          TopLeft="595.322218276174,1164.7">
+          TopLeft="595.322218276174,1367.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,60.0000000000002"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12874,9 +13960,7 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12916,6 +14000,54 @@ where [refTable].[Nombre] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Cambio1]"
+          TopLeft="694.599991059303,1718.39999779463">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-42.3999987483062"
+              Start="0,0"
+              End="0,-34.8999987483062">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-34.8999987483062" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.15455078125,-22.3245110929031,34.3091015625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Excel a Relacional.Paths[Cambio]"
+          TopLeft="673.599991282821,1951.19999552965">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.3999987632035"
+              Start="0,0"
+              End="0,33.8999987632035">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.8999987632035" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.15455078125,12.0754876628517,34.3091015625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\DFT - Excel a Relacional.Paths[Aggregate Output 1]"
           TopLeft="316.322218276174,1571.1">
           <EdgeLayout.Curve>
@@ -12946,88 +14078,14 @@ where [refTable].[Nombre] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - Excel a Relacional\LK - Estado laboral">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - Excel a Relacional\Destino - DUPLICADOS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_RECHAZOS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - Excel a Relacional\LK - Ocupacion">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - Excel a Relacional\Excel Source">
+    design-time-name="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_CAMBIOS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13059,6 +14117,19 @@ where [refTable].[Nombre] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Excel a Relacional\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -13099,6 +14170,19 @@ where [refTable].[Nombre] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\DFT - Excel a Relacional\Destino - DUPLICADOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\DFT - Excel a Relacional\LK - Tipo contrato">
     <Properties>
       <Property>
@@ -13118,6 +14202,78 @@ where [refTable].[Nombre] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Excel a Relacional\LK - Estado laboral">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Excel a Relacional\Destino - CAMBIOS ingreso">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Excel a Relacional\LK - Ocupacion">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Excel a Relacional\Destino - ETL_REGISTRO_RECHAZOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
